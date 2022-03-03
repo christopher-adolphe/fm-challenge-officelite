@@ -34,15 +34,20 @@ module.exports = {
       template: path.resolve(__dirname, 'src/index.html'),
       filename: 'index.html'
     }),
+    new HtmlWebpackPlugin({
+      title: 'Officelite coming soon site',
+      template: path.resolve(__dirname, 'src/sign-up.html'),
+      filename: 'sign-up.html'
+    }),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/header.html'),
       location: 'header',
-      template_filename: ['index.html']
+      template_filename: ['index.html', 'sign-up.html']
     }),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/footer.html'),
       location: 'footer',
-      template_filename: ['index.html']
+      template_filename: ['index.html', 'sign-up.html']
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash].css'
