@@ -1,0 +1,52 @@
+//------------------------------------------------------------------------------
+// Breakpoints
+//------------------------------------------------------------------------------
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+//------------------------------------------------------------------------------
+// Container Width
+//------------------------------------------------------------------------------
+$container-width-sm: 100%;
+$container-width-md: 720px;
+$container-width-lg: 960px;
+$container-width-xl: 1040px;
+$container-width-xxl: 1320px;
+
+//------------------------------------------------------------------------------
+// Z-index
+//------------------------------------------------------------------------------
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-offcanvas-backdrop:         1040;
+$zindex-offcanvas:                  1045;
+$zindex-modal-backdrop:             1050;
+$zindex-modal:                      1055;
+$zindex-popover:                    1070;
+$zindex-tooltip:                    1080;
+
+//------------------------------------------------------------------------------
+// Fonts
+//------------------------------------------------------------------------------
+$root-font-size: 16px;
+$font-family-primary-light: 'lato-light', sans-serif;
+$font-family-primary-regular: 'lato-regular', sans-serif;
+$font-family-primary-bold: 'lato-bold', sans-serif;
+
+//------------------------------------------------------------------------------
+// Colors
+//------------------------------------------------------------------------------
+$neutral-color-1: rgba(241, 241, 241, 1);
+$neutral-color-2: rgba(241, 244, 248, 1);
+$neutral-color-3: rgba(250, 251, 253, 1);
+
+$dark-color-1: rgba(27, 26, 30, 1);
+$dark-color-2: rgba(27, 42, 78, 1);
+$dark-color-3: rgba(22, 28, 45, 1);
+
+$blue-color-1: rgba(142, 214, 251, 1);
+$blue-color-2: rgba(28, 120, 192, 1);

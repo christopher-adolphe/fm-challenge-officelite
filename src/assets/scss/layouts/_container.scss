@@ -1,0 +1,31 @@
+@use '../abstracts/' as *;
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 toRem(20px);
+
+  @include media-breakpoint(sm) {
+    max-width: $container-width-sm;
+  }
+
+  @include media-breakpoint(md) {
+    max-width: $container-width-md;
+  }
+
+  @include media-breakpoint(lg) {
+    max-width: $container-width-lg;
+  }
+
+  @include media-breakpoint(xl) {
+    max-width: $container-width-xl;
+  }
+
+  @include media-breakpoint(xxl) {
+    max-width: $container-width-xxl;
+  }
+
+  &--fluid {
+    max-width: 100%;
+  }
+}

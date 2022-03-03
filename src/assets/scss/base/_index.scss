@@ -1,0 +1,9 @@
+/*
+This file is used to contain all base imports to apply global styles to the whole project.
+*/
+
+// Import Base files
+@forward 'normalize';
+@forward 'reset';
+@forward 'typography';
+@forward 'helpers';

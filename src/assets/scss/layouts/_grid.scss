@@ -1,0 +1,16 @@
+@use '../abstracts/' as *;
+
+.grid {
+  display: grid;
+  grid-gap: toRem(20px);
+  grid-template-columns: repeat(auto-fit, minmax(toRem(306px), 1fr));
+
+  &__item {
+    width: 100%;
+    min-height: toRem(8px);
+
+    &--full-width {
+      grid-column: 1 / -1;
+    }
+  }
+}
