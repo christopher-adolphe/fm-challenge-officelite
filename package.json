@@ -1,7 +1,7 @@
 {
-  "name": "frontend-dev-boilerplate",
+  "name": "fm-challenge-officelite",
   "version": "1.0.0",
-  "description": "A frontend development boilerplate with Webpack 5",
+  "description": "Frontend Mentor - Officelite coming soon site",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config=webpack.dev.js",
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/christopher-adolphe/frontend-dev-boilerplate.git"
+    "url": "git+https://github.com/christopher-adolphe/fm-challenge-officelite.git"
   },
   "keywords": [
-    "frontend development boilerplate",
+    "frontend development",
     "webpack 5",
     "html 5",
     "sass",
