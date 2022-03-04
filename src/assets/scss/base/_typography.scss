@@ -1,22 +1,30 @@
 @use '../abstracts/' as *;
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  margin: 0 0 toRem(8px) 0;
+  margin: 0;
   color: $dark-color-1;
   font-family: $font-family-primary-bold;
   line-height: 1.2;
 }
 
 h1, .h1 {
-  font-size: toRem(48px);
+  margin-bottom: toRem(24px);
+  font-size: toRem(56px);
+}
+
+.h1 {
+  &--display-sm {
+    font-size: toRem(48px);
+  }
 }
 
 h2, .h2 {
-  font-size: toRem(40px);
+  margin-bottom: toRem(48px);
+  font-size: toRem(32px);
 }
 
 h3, .h3 {
-  font-size: toRem(32px);
+  font-size: toRem(20px);
 }
 
 h4, .h4 {

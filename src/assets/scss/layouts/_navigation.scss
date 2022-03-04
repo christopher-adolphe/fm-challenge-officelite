@@ -2,8 +2,9 @@
 
 .navigation {
   &__brand {
-    color: $neutral-color-1;
-    font-family: $font-family-primary-bold;
-    font-size: toRem(32px);
+    display: block;
+    width: 100%;
+    max-width: toRem(154px);
+    height: toRem(30px);
   }
 }

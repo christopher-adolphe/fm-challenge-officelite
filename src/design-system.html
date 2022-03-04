@@ -8,21 +8,183 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <div class="page">
+  <div id="page-design-system" class="page page--design-system">
     <header class="page__header"></header>
 
-    <main class="page__content page__section--bg-light-1">
-      <section class="page__section">
+    <main class="page__content">
+      <div class="container">
+        <h1 class="h1--display-sm">Design System</h1>
+      </div>
+
+      <section id="section-color" class="page__section mt--md mb--lg">
         <div class="container">
+          <h2>Color</h2>
+
           <div class="grid">
             <div class="grid__item">
-              <div class="hero__content d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-start">
-                <h1 class="hero__title">Design System</h1>
-  
-                <p class="hero__tag-line">A great boilerplate to quickly start any front-end development project using TypeScript, Sass and webpack 5.</p>
+              <div class="swatch">
+                <div class="swatch__color swatch__color--blue-1"></div>
+
+                <div class="swatch__description">
+                  <h3 class="swatch__hex">#5175FF</h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">RGB</span>
+                    <span class="swatch__color-model-value">81, 117, 255</span>
+                  </h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">HSL</span>
+                    <span class="swatch__color-model-value">228°, 100%, 66%</span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid__item">
+              <div class="swatch">
+                <div class="swatch__color swatch__color--dark-1"></div>
+
+                <div class="swatch__description">
+                  <h3 class="swatch__hex">#333950</h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">RGB</span>
+                    <span class="swatch__color-model-value">51, 57, 80</span>
+                  </h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">HSL</span>
+                    <span class="swatch__color-model-value">228°, 22%, 26%</span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid__item">
+              <div class="swatch">
+                <div class="swatch__color swatch__color--dark-3"></div>
+
+                <div class="swatch__description">
+                  <h3 class="swatch__hex">#747B95</h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">RGB</span>
+                    <span class="swatch__color-model-value">116, 123, 149</span>
+                  </h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">HSL</span>
+                    <span class="swatch__color-model-value">227°, 13%, 52%</span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid__item">
+              <div class="swatch">
+                <div class="swatch__color swatch__color--blue-2"></div>
+
+                <div class="swatch__description">
+                  <h3 class="swatch__hex">#829CFF</h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">RGB</span>
+                    <span class="swatch__color-model-value">130, 156, 255</span>
+                  </h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">HSL</span>
+                    <span class="swatch__color-model-value">228°, 100%, 75%</span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid__item">
+              <div class="swatch">
+                <div class="swatch__color swatch__color--dark-2"></div>
+
+                <div class="swatch__description">
+                  <h3 class="swatch__hex">#25293A</h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">RGB</span>
+                    <span class="swatch__color-model-value">37, 41, 58</span>
+                  </h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">HSL</span>
+                    <span class="swatch__color-model-value">229°, 22%, 19%</span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid__item">
+              <div class="swatch">
+                <div class="swatch__color swatch__color--red-1"></div>
+
+                <div class="swatch__description">
+                  <h3 class="swatch__hex">#F05B5B</h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">RGB</span>
+                    <span class="swatch__color-model-value">240, 91, 91</span>
+                  </h3>
+
+                  <h3 class="swatch__color-model">
+                    <span class="swatch__color-model-title">HSL</span>
+                    <span class="swatch__color-model-value">0°, 83%, 65%</span>
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="section-typography" class="page__section mb--xl">
+        <div class="container">
+          <h2>Typography</h2>
+        </div>
+      </section>
+
+      <section id="section-buttons" class="page__section mb--xl">
+        <div class="container">
+          <h2>Buttons</h2>
+
+          <div class="grid">
+            <div class="grid__item">
+              <div class="card">
+                <h3>Card Component</h3>
+
+                <button type="button">Button 1</button>
+              </div>
+            </div>
+  
+            <div class="grid__item">
+              <div class="card">
+                <h3>Card Component</h3>
+
+                <button type="button">Button 2</button>
+              </div>
+            </div>
+  
+            <div class="grid__item">
+              <div class="card">
+                <h3>Card Component</h3>
+
+                <button type="button">Button 3</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-form-elements" class="page__section mb--xl">
+        <div class="container">
+          <h2>Form Elements</h2>
         </div>
       </section>
     </main>

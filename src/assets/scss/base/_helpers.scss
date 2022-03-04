@@ -1,3 +1,8 @@
+@use '../abstracts/' as *;
+
+//------------------------------------------------------------------------------
+// Flexbox
+//------------------------------------------------------------------------------
 .d-flex {
   display: flex;
 
@@ -54,6 +59,9 @@
   }
 }
 
+//------------------------------------------------------------------------------
+// Text Alignment
+//------------------------------------------------------------------------------
 .text {
   &-left {
     text-align: left;
@@ -65,5 +73,100 @@
 
   &-right {
     text-align: right;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Background Color
+//------------------------------------------------------------------------------
+.bg {
+  &--light {
+    background-color: $neutral-color-2;
+  }
+
+  &--dark {
+    background-color: $dark-color-2;
+  }
+
+  &--blue {
+    background-color: $blue-color-1;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Margin Spacing
+//------------------------------------------------------------------------------
+.mt {
+  &--sm {
+    margin-top: toRem(24px);
+  }
+
+  &--md {
+    margin-top: toRem(48px);
+  }
+
+  &--lg {
+    margin-top: toRem(120px);
+  }
+
+  &--xl {
+    margin-top: toRem(160px);
+  }
+}
+
+.mb {
+  &--sm {
+    margin-bottom: toRem(24px);
+  }
+
+  &--md {
+    margin-bottom: toRem(48px);
+  }
+
+  &--lg {
+    margin-bottom: toRem(120px);
+  }
+
+  &--xl {
+    margin-bottom: toRem(160px);
+  }
+}
+
+//------------------------------------------------------------------------------
+// Padding Spacing
+//------------------------------------------------------------------------------
+.pt {
+  &--sm {
+    padding-top: toRem(24px);
+  }
+
+  &--md {
+    padding-top: toRem(48px);
+  }
+
+  &--lg {
+    padding-top: toRem(120px);
+  }
+
+  &--xl {
+    padding-top: toRem(160px);
+  }
+}
+
+.pb {
+  &--sm {
+    padding-bottom: toRem(24px);
+  }
+
+  &--md {
+    padding-bottom: toRem(48px);
+  }
+
+  &--lg {
+    padding-bottom: toRem(120px);
+  }
+
+  &--xl {
+    padding-bottom: toRem(160px);
   }
 }

@@ -1,0 +1,19 @@
+@use '../abstracts/' as *;
+
+.card {
+  padding: toRem(40px);
+  background-color: $neutral-color-2;
+  border-radius: toRem(13px);
+
+  &--bg-dark {
+    background-color: $dark-color-2;
+  }
+
+  &--bg-blue {
+    background-color: $blue-color-1;
+  }
+
+  &--shadow {
+    box-shadow: $shadow-color-1;
+  }
+}
