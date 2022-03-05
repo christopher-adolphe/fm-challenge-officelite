@@ -77,6 +77,53 @@
 }
 
 //------------------------------------------------------------------------------
+// Text Color
+//------------------------------------------------------------------------------
+.text {
+  &-dark-color-1 {
+    color: $dark-color-1;
+  }
+
+  &-dark-color-2 {
+    color: $dark-color-2;
+  }
+
+  &-dark-color-3 {
+    color: $dark-color-3;
+  }
+
+  &-red-color-1 {
+    color: $dark-color-1;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Text Font
+//------------------------------------------------------------------------------
+.text {
+  &-font-regular {
+    font-family: $font-family-primary-regular;
+  }
+
+  &-font-bold {
+    font-family: $font-family-primary-bold;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Letter Spacing
+//------------------------------------------------------------------------------
+.text-spacing {
+  &--sm {
+    letter-spacing: toRem(8px);
+  }
+
+  &--md {
+    letter-spacing: toRem(16px);
+  }
+}
+
+//------------------------------------------------------------------------------
 // Background Color
 //------------------------------------------------------------------------------
 .bg {
@@ -94,9 +141,11 @@
 }
 
 //------------------------------------------------------------------------------
-// Margin Spacing
+// Margin Vertical Spacing
 //------------------------------------------------------------------------------
 .mt {
+  margin-top: toRem(16px);
+
   &--sm {
     margin-top: toRem(24px);
   }
@@ -115,6 +164,8 @@
 }
 
 .mb {
+  margin-bottom: toRem(16px);
+
   &--sm {
     margin-bottom: toRem(24px);
   }
@@ -133,9 +184,54 @@
 }
 
 //------------------------------------------------------------------------------
-// Padding Spacing
+// Margin Horizontal Spacing
+//------------------------------------------------------------------------------
+.ml {
+  margin-left: toRem(16px);
+
+  &--sm {
+    margin-left: toRem(24px);
+  }
+
+  &--md {
+    margin-left: toRem(48px);
+  }
+
+  &--lg {
+    margin-left: toRem(120px);
+  }
+
+  &--xl {
+    margin-left: toRem(160px);
+  }
+}
+
+.mr {
+  margin-right: toRem(16px);
+
+  &--sm {
+    margin-right: toRem(24px);
+  }
+
+  &--md {
+    margin-right: toRem(48px);
+  }
+
+  &--lg {
+    margin-right: toRem(120px);
+  }
+
+  &--xl {
+    margin-right: toRem(160px);
+  }
+}
+
+//------------------------------------------------------------------------------
+// Padding Vertical Spacing
 //------------------------------------------------------------------------------
 .pt {
+  padding-top: toRem(16px);
+  
   &--sm {
     padding-top: toRem(24px);
   }
@@ -154,6 +250,8 @@
 }
 
 .pb {
+  padding-bottom: toRem(16px);
+
   &--sm {
     padding-bottom: toRem(24px);
   }

@@ -5,12 +5,31 @@
   background-color: $neutral-color-2;
   border-radius: toRem(13px);
 
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+  }
+
   &--bg-dark {
     background-color: $dark-color-2;
   }
 
   &--bg-blue {
     background-color: $blue-color-1;
+
+    .card {
+      &__title,
+      &__text {
+        color: $neutral-color-2;
+      }
+    }
+  }
+
+  &--bg-none {
+    padding: 0;
+    background-color: transparent;
   }
 
   &--shadow {

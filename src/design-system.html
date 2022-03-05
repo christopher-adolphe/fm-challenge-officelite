@@ -13,7 +13,7 @@
 
     <main class="page__content">
       <div class="container">
-        <h1 class="h1--display-sm">Design System</h1>
+        <h1 class="display--2">Design System</h1>
       </div>
 
       <section id="section-color" class="page__section mt--md mb--lg">
@@ -147,6 +147,66 @@
       <section id="section-typography" class="page__section mb--xl">
         <div class="container">
           <h2>Typography</h2>
+
+          <hr class="mb--md" />
+
+          <div class="grid">
+            <div class="grid__item">
+              <span class="display display--1 text-dark-color-1">Kumbh Sans</span>
+            </div>
+
+            <div class="grid__item grid__item--span-end-2">
+              <p class="lead--1 text-spacing--sm"><span class="text-font-bold">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()</p>
+            </div>
+          </div>
+
+          <hr class="mt--md mb--md" />
+
+          <div class="grid mb--md">
+            <div class="grid__item">
+              <div class="card card--bg-none">
+                <h4>H1 - Kumbh Sans Bold - 56px - 64px Line</h4>
+
+                <h1 class="ml--sm">Lorem Ipsum Dolor Sit Amet</h1>
+              </div>
+            </div>
+
+            <div class="grid__item">
+              <div class="card card--bg-none">
+                <h4>Body 1 - Kumbh Sans Regular - 18px - 28px Line</h4>
+
+                <p class="lead-2 ml--sm">Loremv ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid mb--md">
+            <div class="grid__item">
+              <div class="card card--bg-none">
+                <h4>H2 - Kumbh Sans Bold - 20px - 28px Line</h4>
+
+                <h2 class="ml--sm">Lorem Ipsum Dolor Sit Amet</h2>
+              </div>
+            </div>
+
+            <div class="grid__item">
+              <div class="card card--bg-none">
+                <h4>Body 2 - Kumbh Sans Regular - 16px - 28px Line</h4>
+                
+                <p class="ml--sm">Loremv ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="grid__item">
+              <div class="card card--bg-none">
+                <h4>H3 - Kumbh Sans Bold - All Caps - 16px - 48px Line</h4>
+
+                <h3 class="ml--sm">Lorem Ipsum Dolor Sit Amet</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -157,25 +217,49 @@
           <div class="grid">
             <div class="grid__item">
               <div class="card">
-                <h3>Card Component</h3>
+                <div class="card__body mb--md">
+                  <button type="button" class="btn btn--primary mb">Button 1</button>
 
-                <button type="button">Button 1</button>
+                  <p class="card__text text-center">Normal</p>
+                </div>
+
+                <div class="card__body">
+                  <button type="button" class="btn btn--primary active mb">Button 1</button>
+
+                  <p class="card__text text-center">Hover</p>
+                </div>
               </div>
             </div>
   
             <div class="grid__item">
               <div class="card">
-                <h3>Card Component</h3>
+                <div class="card__body mb--md">
+                  <button type="button" class="btn btn--secondary mb">Button 2</button>
 
-                <button type="button">Button 2</button>
+                  <p class="card__text text-center">Normal</p>
+                </div>
+
+                <div class="card__body">
+                  <button type="button" class="btn btn--secondary active mb">Button 2</button>
+
+                  <p class="card__text text-center">Hover</p>
+                </div>
               </div>
             </div>
   
             <div class="grid__item">
-              <div class="card">
-                <h3>Card Component</h3>
+              <div class="card card--bg-blue">
+                <div class="card__body mb--md">
+                  <button type="button" class="btn btn--tertiary mb">Button 3</button>
 
-                <button type="button">Button 3</button>
+                  <p class="card__text text-center">Normal</p>
+                </div>
+
+                <div class="card__body">
+                  <button type="button" class="btn btn--tertiary active mb">Button 3</button>
+
+                  <p class="card__text text-center">Hover</p>
+                </div>
               </div>
             </div>
           </div>

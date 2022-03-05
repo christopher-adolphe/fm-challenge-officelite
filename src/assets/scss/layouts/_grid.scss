@@ -13,4 +13,14 @@
       grid-column: 1 / -1;
     }
   }
+
+  @include media-breakpoint(xl) {
+    &__item {
+      &--span {
+        &-end-2 {
+          grid-column: 2 / -1;
+        }
+      }
+    }
+  }
 }

@@ -78,7 +78,7 @@ html {
 
 body {
   min-height: 100%;
-  font: 1rem/1.5 $font-family-primary-regular;
+  font: 1rem/1.75 $font-family-primary-regular;
   text-align: left;
   background-color: $neutral-color-1;
   color: $neutral-color-1;
@@ -86,7 +86,8 @@ body {
 
 p {
   margin: 0;
-  color: $neutral-color-1;
+  color: $dark-color-3;
+  word-break: break-all;
 
   &:not(:last-child) {
     margin-bottom: toRem(16px);
@@ -101,6 +102,11 @@ a {
 ul {
   margin: 0;
   padding: 0;
+}
+
+hr {
+  width: 100%;
+  border-top: 1px solid $dark-color-1--opacity-25;
 }
 
 .img-fluid {
