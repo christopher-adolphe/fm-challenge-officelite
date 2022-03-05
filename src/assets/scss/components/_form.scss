@@ -1,0 +1,71 @@
+@use '../abstracts/' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  &__group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: toRem(24px);
+
+    &--is-invalid {
+      .form {
+        &__control {
+          border-color: $red-color-1;
+        }
+
+        &__error {
+          transform: translateY(toRem(-46px));
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__label {
+    left: toRem(16px);
+    color: $dark-color-3--opacity-50;
+  }
+
+  &__control {
+    height: toRem(44px);
+    padding: 0 toRem(16px) toRem(16px) toRem(16px);
+    background-color: transparent;
+    border-bottom: 1px solid $dark-color-3;
+    color: $dark-color-1;
+    font-size: toRem(16px);
+    line-height: 1.75;
+
+    &::placeholder {
+      color: $dark-color-3--opacity-50;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: toRem(-30px);
+    left: toRem(16px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - toRem(32px));
+    color: $red-color-1;
+    transform: translateY(0);
+    opacity: 0;
+    transition: transform 0.75s ease-in-out, opacity 0.5s ease-in-out;
+
+    &-icon {
+      display: inline-block;
+      width: toRem(20px);
+      height: toRem(20px);
+      background: url('../../assets/images/shared/icon-error.svg');
+      background-size: cover;
+    }
+  }
+}

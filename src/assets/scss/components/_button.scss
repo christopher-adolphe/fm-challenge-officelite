@@ -10,11 +10,12 @@
   font-family: $font-family-primary-bold;
   font-size: toRem(16px);
   line-height: 1.75;
-  transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+  transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out, box-shadow 0.75s ease-in-out;
   cursor: pointer;
 
   &--primary {
     background-color: $blue-color-1;
+    transition: background-color 0.75s ease-in-out;
 
     &:hover,
     &:focus,
@@ -34,7 +35,6 @@
     }
   }
 
-
   &--tertiary {
     background-color: $neutral-color-2;
     color: $blue-color-1;
@@ -43,6 +43,17 @@
     &:focus,
     &.active {
       color: $blue-color-2;
+    }
+  }
+
+  &--shadow {
+    box-shadow: transparent;
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out, box-shadow 0.75s ease-in-out;
+    
+    &:hover,
+    &:focus,
+    &.active {
+      box-shadow: $shadow-color-2;
     }
   }
 }
