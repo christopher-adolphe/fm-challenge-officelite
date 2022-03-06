@@ -270,22 +270,105 @@
         <div class="container">
           <h2>Form Elements</h2>
 
-          <div class="grid">
-            <div class="grid__item">
-              <form class="form">
+          <form class="form">
+            <div class="grid">
+              <div class="grid__item">
                 <div class="form__group">
-                  <label for="" class="form__label visually-hidden">Text Field</label>
-                  <input type="text" class="form__control" placeholder="Text Field">
+                  <label for="text-field-1" class="form__label visually-hidden">Text Field</label>
+
+                  <input type="text" id="text-field-1" class="form__control" placeholder="Text Field" />
+
                   <span class="form__error">Text Field Error <span class="form__error-icon"></span></span>
                 </div>
-
+              </div>
+              
+              <div class="grid__item">
                 <div class="form__group">
-                  <label for="" class="form__label visually-hidden">Text Field</label>
-                  <input type="text" class="form__control" placeholder="Text Field">
+                  <label for="text-field-2" class="form__label visually-hidden">Text Field</label>
+
+                  <input type="text" id="text-field-2" class="form__control" placeholder="Text Field" value="Text Field Filled" />
+
+                  <span class="form__error">Text Field Error <span class="form__error-icon"></span></span>
                 </div>
-              </form>
+              </div>
+              
+              <div class="grid__item">
+                <div class="form__group form__group--is-invalid">
+                  <label for="text-field-3" class="form__label visually-hidden">Text Field</label>
+
+                  <input type="text" id="text-field-3" class="form__control" />
+
+                  <span class="form__error">Text Field Error <span class="form__error-icon"></span></span>
+                </div>
+              </div>
+              
+              <div class="grid__item">
+                <div class="form__group">
+                  <label for="select-field-4" class="form__label visually-hidden">Select Field</label>
+
+                  <select id="select-field-4" class="form__select js-select" data-option-types="Free $9.99 $19.99">
+                    <option value="Options">Options</option>
+                    <option value="Options 2">Options 2</option>
+                    <option value="Options 3">Options 3</option>
+                  </select>
+
+                  <span class="form__error">Text Field Error <span class="form__error-icon"></span></span>
+                </div>
+              </div>
+
+              <div class="grid__item">
+                <div class="form__group">
+                  <label for="select-field-6" class="form__label visually-hidden">Select Field</label>
+
+                  <select id="select-field-6" class="form__select js-select" data-option-types="SomeVal1 SomeVal2 SomeVal3">
+                    <option value="Test">Test</option>
+                    <option value="Test 2">Test 2</option>
+                    <option value="Test 3">Test 3</option>
+                  </select>
+
+                  <span class="form__error">Text Field Error <span class="form__error-icon"></span></span>
+                </div>
+              </div>
+              
+              <div class="grid__item">
+                <div class="form__group">
+                  <label for="select-field-5" class="form__label visually-hidden">Select Field</label>
+
+                  <div class="form__select form__select--custom form__select--is-active">
+                    <span class="form__select-value">Options Opened</span>
+
+                    <ul class="form__select-list">
+                      <li class="form__select-item">
+                        <label for="basic-pack" class="form__select-label">
+                          Basic Pack <span class="form__select-type">Free</span>
+                        </label>
+
+                        <input type="radio" name="pack" id="basic-pack" class="form__select-option" value="Basic Pack Free" checked />
+                      </li>
+
+                      <li class="form__select-item">
+                        <label for="pro-pack" class="form__select-label">
+                          Pro Pack <span class="form__select-type">$9.99</span>
+                        </label>
+
+                        <input type="radio" name="pack" id="pro-pack" class="form__select-option" value="Pro Pack $9.99" />
+                      </li>
+
+                      <li class="form__select-item">
+                        <label for="ultimate-pack" class="form__select-label">
+                          Ultimate Pack <span class="form__select-type">$19.99</span>
+                        </label>
+
+                        <input type="radio" name="pack" id="ultimate-pack" class="form__select-option" value="Ultimate Pack $19.99" />
+                      </li>
+                    </ul>
+                  </div>
+
+                  <span class="form__error">Text Field Error <span class="form__error-icon"></span></span>
+                </div>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </section>
     </main>

@@ -112,3 +112,28 @@ hr {
 .img-fluid {
   height: auto;
 }
+
+//------------------------------------------------------------------------------
+// Firefox Scrollbar
+//------------------------------------------------------------------------------
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue $dark-color-1--opacity-15;
+}
+
+//------------------------------------------------------------------------------
+// Chrome, Edge, and Safari Scrollbar
+//------------------------------------------------------------------------------
+*::-webkit-scrollbar {
+  width: toRem(10px);
+}
+
+*::-webkit-scrollbar-track {
+  margin-right: 45px;
+  background: $dark-color-1--opacity-15;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $blue-color-1--opacity-25;
+  border-radius: toRem(8px);
+}

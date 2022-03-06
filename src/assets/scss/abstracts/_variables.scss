@@ -43,11 +43,13 @@ $neutral-color-1: rgba(250, 250, 250, 1);
 $neutral-color-2: rgba(255, 255, 255, 1);
 
 $dark-color-1: rgba(51, 57, 80, 1);
+$dark-color-1--opacity-15: rgba(51, 57, 80, 0.15);
 $dark-color-1--opacity-25: rgba(51, 57, 80, 0.25);
 $dark-color-1--opacity-50: rgba(51, 57, 80, 0.5);
 
 $dark-color-2: rgba(37, 41, 58, 1);
 $dark-color-3: rgba(116, 123, 149, 1);
+$dark-color-3--opacity-25: rgba(116, 123, 149, 0.25);
 $dark-color-3--opacity-50: rgba(116, 123, 149, 0.5);
 
 $blue-color-1: rgba(81, 117, 255, 1);
@@ -61,5 +63,6 @@ $red-color-1: rgba(240, 91, 91, 1);
 //------------------------------------------------------------------------------
 // Shadows
 //------------------------------------------------------------------------------
-$shadow-color-1: 0 50px 50px -24px rgba(75,92,154,0.24);
-$shadow-color-2: 0 25px 25px -10px rgba(75,92,154,0.24);
+$shadow-color-1: 0 50px 50px -25px rgba(75, 92, 154, 0.24);
+$shadow-color-2: 0 25px 25px -10px rgba(75, 92, 154, 0.24);
+$shadow-color-3: 0 50px 50px -25px rgba(75, 92, 154, 0.74);

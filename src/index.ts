@@ -1,7 +1,8 @@
 import { Pagination } from "swiper";
 import 'swiper/css/pagination';
 
-import { getDOMElement, generateCopyright, generateSlider } from "./assets/js/utilities";
+import { getDOMElement, generateCopyright, generateSlider } from './assets/js/utilities';
+import customSelect from './assets/js/custom-select';
 
 document.addEventListener('DOMContentLoaded', () => {
   const copyrightElem = getDOMElement('copyright');
@@ -24,4 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   heroSlider?.init();
+
+  customSelect();
 });
