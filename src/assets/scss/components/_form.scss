@@ -1,0 +1,192 @@
+@use '../abstracts/' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  &__group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: toRem(24px);
+
+    &--is-invalid {
+      .form {
+        &__control {
+          border-color: $red-color-1;
+        }
+
+        &__error {
+          transform: translateY(toRem(30px));
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__label {
+    left: toRem(16px);
+    color: $dark-color-3--opacity-50;
+  }
+
+  &__control,
+  &__select {
+    height: toRem(44px);
+    padding: 0 toRem(16px) toRem(16px) toRem(16px);
+    background-color: transparent;
+    border-bottom: 1px solid $dark-color-3;
+    color: $dark-color-1;
+    font-size: toRem(16px);
+    line-height: 1.75;
+    transition: border-color 0.75s ease-in-out;
+  }
+
+  &__control {
+    &::placeholder {
+      color: $dark-color-3--opacity-50;
+    }
+  }
+
+  &__select {
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: toRem(12px);
+      right: toRem(12px);
+      content: '';
+      width: toRem(12px);
+      height: toRem(6px);
+      background: url('../../assets/images/shared/icon-arrow-down.svg') center center no-repeat;
+      background-size: cover;
+      transform: rotate(0deg);
+      transition: transform 0.25s ease-in-out;
+    }
+
+    &--custom {
+      padding: 0;
+    }
+
+    &--is-active {
+      &::before {
+        transform: rotate(-180deg);
+      }
+
+      .form__select {
+        &-list {
+          clip-path: polygon(-130% 0, 130% 0, 130% 140%, 0 140%);
+          opacity: 1;
+
+          &--dropup {
+            clip-path: polygon(-130% 0, 130% 0, 130% 140%, 0 140%);
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &-value {
+      display: inline-block;
+      width: 100%;
+      height: toRem(44px);
+      padding: 0 toRem(16px) toRem(16px) toRem(16px);
+    }
+
+    &-list {
+      position: absolute;
+      left: 0;
+      top: calc(100% + toRem(24px));
+      width: 100%;
+      max-height: toRem(200px);
+      padding: toRem(8px) toRem(32px);
+      background-color: $neutral-color-2;
+      border: 1px solid $dark-color-1--opacity-15;
+      border-radius: toRem(8px);
+      box-shadow: $shadow-color-3;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      opacity: 0;
+      transition: clip-path 0.25s ease-in-out, opacity 0.75s ease-in-out;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar-track {
+        border-radius: toRem(8px);
+      }
+
+      &--dropup {
+        top: unset;
+        bottom: 40%;
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        opacity: 0;
+        transition: clip-path 0.25s ease-in-out, opacity 0.75s ease-in-out;
+      }
+    }
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: toRem(16px) 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $dark-color-3--opacity-25;
+      }
+    }
+
+    &-option {
+      width: toRem(12px);
+      height: toRem(10px);
+
+      &:checked {
+        background: url('../../assets/images/shared/icon-check.svg') center center no-repeat;
+        background-size: cover;
+      }
+    }
+    
+    &-value,
+    &-label,
+    &-type {
+      font-family: $font-family-primary-bold;
+      font-size: toRem(16px);
+      line-height: 1.75;
+    }
+
+    &-label {
+      display: inline-block;
+      width: 100%;
+      color: $dark-color-1;
+    }
+
+    &-type {
+      margin-left: toRem(8px);
+      color: $dark-color-1--opacity-50;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: toRem(-30px);
+    left: toRem(16px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - toRem(32px));
+    color: $red-color-1;
+    transform: translateY(0);
+    opacity: 0;
+    transition: transform 0.75s ease-in-out, opacity 0.5s ease-in-out;
+    z-index: -1;
+
+    &-icon {
+      display: inline-block;
+      width: toRem(20px);
+      height: toRem(20px);
+      background: url('../../assets/images/shared/icon-error.svg') center center no-repeat;
+      background-size: cover;
+    }
+  }
+}

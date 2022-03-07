@@ -1,32 +1,58 @@
 @use '../abstracts/' as *;
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  margin: 0 0 toRem(8px) 0;
+  margin: 0;
   color: $dark-color-1;
   font-family: $font-family-primary-bold;
-  line-height: 1.2;
 }
 
 h1, .h1 {
-  font-size: toRem(48px);
+  margin-bottom: toRem(24px);
+  font-size: toRem(56px);
+  line-height: 1.14;
 }
 
 h2, .h2 {
-  font-size: toRem(40px);
+  margin-bottom: toRem(48px);
+  font-size: toRem(32px);
+  line-height: 1.4;
 }
 
 h3, .h3 {
-  font-size: toRem(32px);
+  margin-bottom: toRem(16px);
+  font-size: toRem(16px);
+  line-height: 3;
+  text-transform: uppercase;
 }
 
 h4, .h4 {
-  font-size: toRem(24px);
+  margin-bottom: toRem(14px);
+  font-family: $font-family-primary-regular;
+  font-size: toRem(16px);
 }
 
-h5, .h5 {
-  font-size: toRem(20px);
+.display {
+  font-family: $font-family-primary-bold;
+
+  &--1 {
+    font-size: toRem(80px);
+    line-height: 1;
+  }
+
+  &--2 {
+    font-size: toRem(48px);
+    line-height: 1.33;
+  }
 }
 
-h6, .h6 {
-  font-size: 1rem;
+.lead {
+  &--1 {
+    font-size: toRem(24px);
+    line-height: 1.67;
+  }
+
+  &--2 {
+    font-size: toRem(18px);
+    line-height: 1.56;
+  }
 }

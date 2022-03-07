@@ -14,7 +14,7 @@ $container-width-sm: 100%;
 $container-width-md: 720px;
 $container-width-lg: 960px;
 $container-width-xl: 1040px;
-$container-width-xxl: 1320px;
+$container-width-xxl: 1110px;
 
 //------------------------------------------------------------------------------
 // Z-index
@@ -33,20 +33,36 @@ $zindex-tooltip:                    1080;
 // Fonts
 //------------------------------------------------------------------------------
 $root-font-size: 16px;
-$font-family-primary-light: 'lato-light', sans-serif;
-$font-family-primary-regular: 'lato-regular', sans-serif;
-$font-family-primary-bold: 'lato-bold', sans-serif;
+$font-family-primary-regular: 'kumbh-sans-regular', sans-serif;
+$font-family-primary-bold: 'kumbh-sans-bold', sans-serif;
 
 //------------------------------------------------------------------------------
 // Colors
 //------------------------------------------------------------------------------
-$neutral-color-1: rgba(241, 241, 241, 1);
-$neutral-color-2: rgba(241, 244, 248, 1);
-$neutral-color-3: rgba(250, 251, 253, 1);
+$neutral-color-1: rgba(250, 250, 250, 1);
+$neutral-color-2: rgba(255, 255, 255, 1);
 
-$dark-color-1: rgba(27, 26, 30, 1);
-$dark-color-2: rgba(27, 42, 78, 1);
-$dark-color-3: rgba(22, 28, 45, 1);
+$dark-color-1: rgba(51, 57, 80, 1);
+$dark-color-1--opacity-15: rgba(51, 57, 80, 0.15);
+$dark-color-1--opacity-25: rgba(51, 57, 80, 0.25);
+$dark-color-1--opacity-50: rgba(51, 57, 80, 0.5);
 
-$blue-color-1: rgba(142, 214, 251, 1);
-$blue-color-2: rgba(28, 120, 192, 1);
+$dark-color-2: rgba(37, 41, 58, 1);
+$dark-color-3: rgba(116, 123, 149, 1);
+$dark-color-3--opacity-25: rgba(116, 123, 149, 0.25);
+$dark-color-3--opacity-50: rgba(116, 123, 149, 0.5);
+
+$blue-color-1: rgba(81, 117, 255, 1);
+$blue-color-1--opacity-15: rgba(81, 117, 255, 0.15);
+$blue-color-1--opacity-25: rgba(81, 117, 255, 0.25);
+
+$blue-color-2: rgba(130, 156, 255, 1);
+
+$red-color-1: rgba(240, 91, 91, 1);
+
+//------------------------------------------------------------------------------
+// Shadows
+//------------------------------------------------------------------------------
+$shadow-color-1: 0 50px 50px -25px rgba(75, 92, 154, 0.24);
+$shadow-color-2: 0 25px 25px -10px rgba(75, 92, 154, 0.24);
+$shadow-color-3: 0 50px 50px -25px rgba(75, 92, 154, 0.74);
