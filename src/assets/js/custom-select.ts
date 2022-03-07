@@ -107,20 +107,20 @@ export default function customSelect() {
           const optionElem = event.target as HTMLInputElement;
 
           if (optionElem.type === 'radio') {
-            if (types.length) {
-              const valueTypeElem: HTMLSpanElement = document.createElement('span');
-              const type = optionElem.value.split(' ').pop();
-              const value = optionElem.value.split(' ').filter(t => t !== type);
+            // if (types.length) {
+            //   const valueTypeElem: HTMLSpanElement = document.createElement('span');
+            //   const type = optionElem.value.split(' ').pop();
+            //   const value = optionElem.value.split(' ').filter(t => t !== type);
 
-              valueTypeElem.className = 'form__select-type';
-              valueTypeElem.textContent = type || '';
+            //   valueTypeElem.className = 'form__select-type';
+            //   valueTypeElem.textContent = type || '';
 
-              customSelectValueElem.textContent = value.join(' ');
-              customSelectValueElem.insertAdjacentElement('beforeend', valueTypeElem);
-            } else {
-              customSelectValueElem.textContent = optionElem.value;
-            }
-            
+            //   customSelectValueElem.textContent = value.join(' ');
+            //   customSelectValueElem.insertAdjacentElement('beforeend', valueTypeElem);
+            // } else {
+            //   customSelectValueElem.textContent = optionElem.value;
+            // }
+            customSelectValueElem.textContent = optionElem.value;
             select.setAttribute('value', optionElem.value);
             customSelectElem.classList.remove('form__select--is-active');
           }

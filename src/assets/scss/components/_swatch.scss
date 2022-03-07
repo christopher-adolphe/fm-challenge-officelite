@@ -4,7 +4,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  margin-bottom: toRem(64px);
+  margin-bottom: toRem(34px);
 
   &__color {
     width: toRem(100px);
@@ -47,7 +47,9 @@
 
   &__hex,
   &__color-model {
+    margin-bottom: 0;
     font-size: toRem(16px);
+    line-height: 1.75;
   }
 
   &__color-model {

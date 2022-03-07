@@ -115,10 +115,14 @@
 //------------------------------------------------------------------------------
 .text-spacing {
   &--sm {
-    letter-spacing: toRem(8px);
+    letter-spacing: toRem(5px);
   }
 
   &--md {
+    letter-spacing: toRem(8px);
+  }
+
+  &--lg {
     letter-spacing: toRem(16px);
   }
 }
