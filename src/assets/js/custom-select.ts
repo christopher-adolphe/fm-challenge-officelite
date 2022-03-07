@@ -1,31 +1,10 @@
-/*
-  1. Look for select element with class name `js-select` in the DOM tree - DONE
-  2. Apply class `visually-hidden` to the select element - DONE
-  3. Create a list of options from the `<option>` elements of the select - DONE
-  4. Create a `<div>` element for the custom select - DONE
-  5. Create a `<div>` element for the custom select value - DONE
-  6. Create a `<ul>` element for the custom select list - DONE
-  7. Create a `<li>` element for the custom select item - DONE
-  8. Create a `<label>` element for the custom select label - DONE
-  9. Create a `<input type="radio">` element for the custom select option - DONE
-  10. Append the custom select element - DONE
-
-
-  11. Toggle class `form__select--is-active` when custom select element is clicked
-*/
-
 export default function customSelect() {
   const selectElems: NodeListOf<HTMLSelectElement> = document.querySelectorAll('.js-select');
-
-  console.log('selectElems NodeList: ', selectElems);
 
   const createCustomSelectElem = (options: string[], index: number, optionTypes: string[]): HTMLDivElement => {
     const customSelectElem: HTMLDivElement = document.createElement('div');
     const customSelectValueElem: HTMLSpanElement = document.createElement('span');
     const customSelectListElem: HTMLUListElement = document.createElement('ul');
-
-    console.log('options: ', options);
-    console.log('optionTypes: ', optionTypes);
 
     if (options.length) {
       options.map((option: string, optionIdx: number) => {
@@ -40,6 +19,11 @@ export default function customSelect() {
 
         labelElem.textContent = option;
 
+        labelElem.setAttribute('for', attrValue);
+        optionElem.setAttribute('id', attrValue);
+        optionElem.setAttribute('type', 'radio');
+        optionElem.setAttribute('name', `pack-${index}`);
+
         if (optionTypes.length) {
           const optionTypeElem: HTMLSpanElement = document.createElement('span');
 
@@ -47,14 +31,10 @@ export default function customSelect() {
           optionTypeElem.textContent = optionTypes[optionIdx];
 
           labelElem.insertAdjacentElement('beforeend', optionTypeElem)
+          optionElem.setAttribute('value', `${option} ${optionTypes[optionIdx]}`);
+        } else {
+          optionElem.setAttribute('value', option);
         }
-
-
-        labelElem.setAttribute('for', attrValue);
-        optionElem.setAttribute('id', attrValue);
-        optionElem.setAttribute('type', 'radio');
-        optionElem.setAttribute('name', `pack-${index}`);
-        optionElem.setAttribute('value', option);
 
         listElem.append(labelElem, optionElem);
 
@@ -62,7 +42,8 @@ export default function customSelect() {
       });
     }
 
-    customSelectElem.className = 'form__select form__select--custom form__select--is-active';
+    customSelectElem.className = 'form__select form__select--custom';
+    customSelectElem.setAttribute('tabindex', '0');
     customSelectValueElem.className = 'form__select-value';
     customSelectListElem.className = 'form__select-list';
 
@@ -80,11 +61,7 @@ export default function customSelect() {
       types = select.dataset.optionTypes.split(' ');
     }
 
-    console.log('option types: ', types);
-
     select.classList.add('visually-hidden');
-
-    console.log('optionElems: ', optionElems);
 
     optionElems.forEach((option: HTMLOptionElement) => {
       const value: string | null = option.getAttribute('value');
@@ -95,13 +72,73 @@ export default function customSelect() {
     });
 
     const customSelect = createCustomSelectElem(options, index, types);
-
-    console.log('customSelect: ', customSelect);
+    let selectListElem: HTMLElement;
 
     select.insertAdjacentElement('afterend', customSelect);
 
-    customSelect.addEventListener('click', (event) => {
-      console.log('custom select clicked: ', event.target);
+    customSelect.addEventListener('click', (event: Event) => {
+      const customSelectValueElem = event.target as HTMLElement;
+      const customSelectElem = (event.target as HTMLElement).parentElement;
+
+      if (customSelectElem) {
+        const { bottom } = customSelectElem.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const availableSpace = viewportHeight - Math.floor(bottom);
+
+        selectListElem = customSelectElem.querySelector('.form__select-list') as HTMLElement;
+
+        if (options.length >= 8) {
+          const maxHeight = (60 * options.length) * 0.5;
+    
+          selectListElem.style.maxHeight = `${maxHeight}px`;
+        }
+
+        // eslint-disable-next-line no-unsafe-optional-chaining
+        const { height } = selectListElem?.getBoundingClientRect();
+
+        if (availableSpace < height) {
+          selectListElem.classList.add('form__select-list--dropup');
+        }
+
+        customSelectElem.classList.toggle('form__select--is-active');
+
+        selectListElem?.addEventListener('click', (event: Event) => {
+          event.stopPropagation();
+          const optionElem = event.target as HTMLInputElement;
+
+          if (optionElem.type === 'radio') {
+            if (types.length) {
+              const valueTypeElem: HTMLSpanElement = document.createElement('span');
+              const type = optionElem.value.split(' ').pop();
+              const value = optionElem.value.split(' ').filter(t => t !== type);
+
+              valueTypeElem.className = 'form__select-type';
+              valueTypeElem.textContent = type || '';
+
+              customSelectValueElem.textContent = value.join(' ');
+              customSelectValueElem.insertAdjacentElement('beforeend', valueTypeElem);
+            } else {
+              customSelectValueElem.textContent = optionElem.value;
+            }
+            
+            select.setAttribute('value', optionElem.value);
+            customSelectElem.classList.remove('form__select--is-active');
+          }
+        });
+      }
+    });
+
+    customSelect.addEventListener('blur', (event: Event) => {
+      const customSelectElem = (event.target as HTMLElement);
+
+      if (customSelectElem) {
+        customSelectElem.classList.remove('form__select--is-active');
+
+        setTimeout(() => {
+          selectListElem.removeAttribute('style');
+          selectListElem.classList.remove('form__select-list--dropup');
+        }, 1000);
+      }
     });
   })
 };
