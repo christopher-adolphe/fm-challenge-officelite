@@ -11,136 +11,135 @@
   <div class="page">
     <header class="page__header"></header>
 
-    <main class="page__content page__section--bg-light-1">
-      <section class="page__section">
+    <main class="page__content">
+      <section id="hero-section" class="page__section">
         <div class="container">
           <div class="grid">
             <div class="grid__item">
-              <div class="hero__content d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-start">
-                <h1 class="hero__title">Ready, Get Set, <span>Code</span></h1>
-  
-                <p class="hero__tag-line">A great boilerplate to quickly start any front-end development project using TypeScript, Sass and webpack 5.</p>
+              <div class="hero__illustration d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-center">
+                <img class="image" src="assets/images/home/illustration-charts.svg" alt="Officelite platform screenshot" />
               </div>
             </div>
 
             <div class="grid__item">
-              <div class="hero__illustration d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-center">
-                <!-- <img class="image" src="assets/images/logo-webpack.svg" alt="Webpack" /> -->
-                <!-- Slider main container -->
-                <div id="hero-slider" class="swiper">
-                  <!-- Additional required wrapper -->
-                  <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                      <img src="assets/images/logo-typescript.svg" alt="TypeScript" />
-                    </div>
+              <div class="hero__content d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-start">
+                <h1 class="hero__title">A simple solution to complex tasks is coming soon</h1>
+  
+                <p class="hero__tag-line">Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new collaboration platform built with an intuitive interface to improve productivity.</p>
 
-                    <div class="swiper-slide">
-                      <img src="assets/images/logo-sass.svg" alt="Sass" />
-                    </div>
+                <button type="button" class="btn btn--primary btn--shadow">Get Started</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    <div class="swiper-slide">
-                      <img class="image" src="assets/images/logo-webpack.svg" alt="Webpack" />
-                    </div>
-                  </div>
+      <section id="pricing-section" class="page__section page__section--bg-dark">
+        <div class="container">
+          <div class="grid">
+            <div class="grid__item">
+              <div class="card">
+                <div class="card__body">
+                  <h3>Basic</h3>
 
-                  <div class="swiper-pagination"></div>
+                  <p class="card__text text-center h1">Free</p>
+
+                  <p class="card__text text-center">Up to 5 users for free</p>
+
+                  <ul>
+                    <li>Basic document collaboration</li>
+                    
+                    <li>2 gb storage</li>
+
+                    <li>Great security and support</li>
+                  </ul>
+
+                  <button type="button" class="btn btn--secondary">Try for Free</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid__item">
+              <div class="card card--bg-blue">
+                <div class="card__body">
+                  <h3>Pro</h3>
+
+                  <p class="card__text text-center h1">$9.99</p>
+
+                  <p class="card__text text-center">Per user, billed monthly</p>
+
+                  <ul>
+                    <li>All essential integrations</li>
+                    
+                    <li>50 gb storage</li>
+
+                    <li>More control and insights</li>
+                  </ul>
+
+                  <button type="button" class="btn btn--tertiary">Try for Free</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid__item">
+              <div class="card">
+                <div class="card__body">
+                  <h3>Ultimate</h3>
+
+                  <p class="card__text text-center h1">$19.99</p>
+
+                  <p class="card__text text-center">Per user, billed monthly</p>
+
+                  <ul>
+                    <li>Robust work management</li>
+                    
+                    <li>100 gb storage</li>
+
+                    <li>VIP support</li>
+                  </ul>
+
+                  <button type="button" class="btn btn--secondary">Try for Free</button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="page__section page__section--bg-light-2">
-        <div class="container">
           <div class="grid">
             <div class="grid__item">
-              <div class="feature">
-                <h3 class="feature__title d-flex d-flex--justify-content-start d-flex--align-items-center">
-                  <span class="feature__icon">
-                    <img src="assets/images/logo-typescript.svg" alt="TypeScript" />
-                  </span>
+              <h3 class="text-neutral-color-2 text-spacing--sm">Coming <span class="text-blue-color-1">4 Nov 2020</span></h3>
 
-                  TypeScript
-                </h3>
-  
-                <p>TypeScript adds additional syntax to JavaScript to support a tighter integration with your editor. Catch errors early in your editor. It understands JavaScript and uses type inference to give you great tooling without additional code.</p>
+              <div class="countdown">
+                <div class="countdown__counter">
+                  <span class="countdown__digit h1">47</span>
+                  
+                  <h4 class="countdown__title">Days</h4>
+                </div>
+
+                <div class="countdown__counter">
+                  <span class="countdown__digit h1">07</span>
+
+                  <h4 class="countdown__title">Hours</h4>
+                </div>
+
+                <div class="countdown__counter">
+                  <span class="countdown__digit h1">56</span>
+
+                  <h4 class="countdown__title">Min</h4>
+                </div>
+
+                <div class="countdown__counter">
+                  <span class="countdown__digit h1">14</span>
+
+                  <h4 class="countdown__title">Sec</h4>
+                </div>
               </div>
             </div>
 
             <div class="grid__item">
-              <div class="feature">
-                <h3 class="feature__title d-flex d-flex--justify-content-start d-flex--align-items-center">
-                  <span class="feature__icon">
-                    <img src="assets/images/logo-sass.svg" alt="Sass" />
-                  </span>
-
-                  Sass
-                </h3>
-  
-                <p>Sass is the most mature, stable, and powerful preprocessor. Sass has features that don't exist in CSS yet like nesting, mixins, inheritance, and other nifty goodies that help you write robust, maintainable CSS.</p>
-              </div>
-            </div>
-
-            <div class="grid__item">
-              <div class="feature">
-                <h3 class="feature__title d-flex d-flex--justify-content-start d-flex--align-items-center">
-                  <span class="feature__icon">
-                    <img src="assets/images/logo-webpack.svg" alt="Webpack" />
-                  </span>
-
-                  webpack
-                </h3>
-  
-                <p>Webpack is a static module bundler for modern JavaScript applications. It combines every module your project needs into one or more bundles, which are static assets to serve your content from.</p>
-              </div>
+              <button type="button" class="btn btn--primary">Get Started</button>
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="page__section page__section--bg-light-2">
-        A simple solution to complex tasks is coming soon
-
-        Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new 
-        collaboration platform built with an intuitive interface to improve productivity.
-      
-        Get Started
-      
-        Basic
-        Free
-        Up to 5 users for free
-        Basic document collaboration
-        2 gb storage
-        Great security and support
-        Try for Free
-      
-        Pro
-        $9.99
-        Per user, billed monthly
-        All essential integrations
-        50 gb storage
-        More control and insights
-        Try for Free
-      
-        Ultimate
-        $19.99
-        Per user, billed monthly
-        Robust work management
-        100 gb storage
-        VIP support
-        Try for Free
-      
-        <!-- If you're choosing to make this date dynamic, set it to 30 days in the future from the moment the visitor views the page -->
-        Coming 4 Nov 2020
-      
-        <!-- If you're choosing to make this timer dynamic, have it countdown from the date you set above -->
-        47 Days
-        07 Hours
-        56 Min
-        14 Sec
-        Get Started
       </section>
     </main>
 

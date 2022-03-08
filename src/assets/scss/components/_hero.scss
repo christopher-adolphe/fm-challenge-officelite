@@ -8,16 +8,7 @@
 
   &__illustration {
     img {
-      width: toRem(340px);
-    }
-
-    .swiper {
-      width: toRem(600px);
-      height: toRem(400px);
-
-      &-slide {
-        text-align: center;
-      }
+      width: toRem(475px);
     }
   }
 
@@ -36,9 +27,9 @@
     font-size: toRem(24px);
   }
 
-  @include media-breakpoint(xl) {
-    &__content {
-      padding-right: toRem(120px);
-    }
-  }
+  // @include media-breakpoint(xl) {
+  //   &__content {
+  //     padding-right: toRem(120px);
+  //   }
+  // }
 }

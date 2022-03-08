@@ -1,0 +1,36 @@
+@use '../abstracts/' as *;
+
+.countdown {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: toRem(16px);
+    background-color: $dark-color-1;
+    border-radius: toRem(13px);
+
+    &:not(:last-child) {
+      margin-right: toRem(16px);
+    }
+  }
+
+  &__digit,
+  &__title {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  &__digit {
+    color: $neutral-color-2;
+  }
+
+  &__title {
+    color: $neutral-color-2--opacity-50;
+    font-family: $font-family-primary-bold;
+  }
+}

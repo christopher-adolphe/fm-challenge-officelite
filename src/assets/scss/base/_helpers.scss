@@ -80,6 +80,22 @@
 // Text Color
 //------------------------------------------------------------------------------
 .text {
+  &-neutral-color-1 {
+    color: $neutral-color-1;
+  }
+
+  &-neutral-color-2 {
+    color: $neutral-color-2;
+  }
+
+  &-blue-color-1 {
+    color: $blue-color-1;
+  }
+
+  &-blue-color-2 {
+    color: $blue-color-2;
+  }
+
   &-dark-color-1 {
     color: $dark-color-1;
   }
