@@ -9,7 +9,7 @@
   height: 100vh;
 
   &__header {
-    padding: toRem(80px) 0 toRem(126px) 0;
+    padding: toRem(46px) 0 toRem(80px) 0;
   }
 
   &__content {
@@ -41,6 +41,18 @@
       &__header {
         padding-bottom: toRem(24px);
       }
+    }
+  }
+
+  @include media-breakpoint(md) {
+    &__header {
+      padding: toRem(80px) 0 toRem(104px) 0;
+    }
+  }
+
+  @include media-breakpoint(xxl) {
+    &__header {
+      padding-bottom: toRem(102px);
     }
   }
 }
