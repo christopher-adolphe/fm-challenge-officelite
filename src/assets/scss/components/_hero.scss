@@ -7,6 +7,8 @@
   }
 
   &__illustration {
+    padding-bottom: toRem(64px);
+
     img {
       width: toRem(170px);
     }
@@ -31,6 +33,8 @@
 
   @include media-breakpoint(md) {
     &__illustration {
+      padding-bottom: 0;
+
       img {
         width: toRem(280px);
       }

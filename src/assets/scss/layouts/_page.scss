@@ -24,6 +24,10 @@
     &--bg-dark {
       background-color: $dark-color-2;
     }
+
+    &--hero {
+      margin-bottom: toRem(100px);
+    }
   }
 
   &__footer {
@@ -48,11 +52,23 @@
     &__header {
       padding: toRem(80px) 0 toRem(104px) 0;
     }
+
+    &__section {
+      &--hero {
+        margin-bottom: toRem(140px);
+      }
+    }
   }
 
   @include media-breakpoint(xxl) {
     &__header {
       padding-bottom: toRem(102px);
+    }
+
+    &__section {
+      &--hero {
+        margin-bottom: toRem(184px);
+      }
     }
   }
 }
