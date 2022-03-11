@@ -1,12 +1,20 @@
 @use '../abstracts/' as *;
 
 .hero {
-  &__content,
-  &__illustration {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  &__illustration,
+  &__content {
     height: 100%;
   }
 
   &__illustration {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     padding-bottom: toRem(64px);
 
     img {
@@ -14,8 +22,7 @@
     }
   }
 
-  &__title,
-  &__tag-line {
+  &__content {
     text-align: center;
   }
 
@@ -32,12 +39,25 @@
   }
 
   @include media-breakpoint(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     &__illustration {
+      flex: 1;
+      order: 2;
+      justify-content: flex-end;
       padding-bottom: 0;
 
       img {
         width: toRem(280px);
       }
+    }
+
+    &__content {
+      flex: 1;
+      order: 1;
+      text-align: left;
     }
 
     &__title,

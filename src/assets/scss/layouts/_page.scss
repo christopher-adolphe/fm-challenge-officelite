@@ -26,7 +26,24 @@
     }
 
     &--hero {
-      margin-bottom: toRem(100px);
+      padding-bottom: toRem(894px);
+    }
+
+    &--pricing {
+      padding-bottom: toRem(100px);
+
+      .page {
+        &__overlap {
+          position: absolute;
+          top: toRem(-796px);
+          left: toRem(24px);
+          width: calc(100% - toRem(48px));
+        }
+      
+        &__adjust-overlap {
+          padding-top: toRem(894px);
+        }
+      }
     }
   }
 
@@ -55,19 +72,48 @@
 
     &__section {
       &--hero {
-        margin-bottom: toRem(140px);
+        padding-bottom: toRem(690px);
+      }
+
+      &--pricing {
+        .page {
+          &__overlap {
+            top: toRem(-550px);
+            left: toRem(16px);
+            width: calc(100% - toRem(32px));
+          }
+        
+          &__adjust-overlap {
+            padding-top: toRem(598px);
+          }
+        }
       }
     }
   }
 
-  @include media-breakpoint(xxl) {
+
+  @include media-breakpoint(xl) {
     &__header {
       padding-bottom: toRem(102px);
     }
 
     &__section {
       &--hero {
-        margin-bottom: toRem(184px);
+        padding-bottom: toRem(370px);
+      }
+
+      &--pricing {
+        padding-bottom: toRem(90px);
+
+        .page {
+          &__overlap {
+            top: toRem(-256px);
+          }
+        
+          &__adjust-overlap {
+            padding-top: toRem(336px);
+          }
+        }
       }
     }
   }

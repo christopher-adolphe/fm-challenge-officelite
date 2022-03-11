@@ -2,7 +2,7 @@
 
 .grid {
   display: grid;
-  grid-gap: toRem(10px);
+  grid-gap: toRem(30px);
   grid-template-columns: repeat(auto-fit, minmax(toRem(314px), 1fr));
 
   &__item {
@@ -14,9 +14,14 @@
     }
   }
 
+  @include media-breakpoint(md) {
+    &--md {
+      grid-template-columns: repeat(auto-fit, minmax(toRem(688px), 1fr));
+    }
+  }
+
   @include media-breakpoint(xl) {
-    grid-gap: toRem(30px);
-    grid-template-columns: repeat(auto-fit, minmax(toRem(322px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(toRem(316px), 1fr));
 
     &__item {
       &--span {

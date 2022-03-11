@@ -1,6 +1,7 @@
 @use '../abstracts/' as *;
 
 .container {
+  position: relative;
   width: 100%;
   margin: 0 auto;
   padding: 0 toRem(24px);
@@ -11,7 +12,7 @@
 
   @include media-breakpoint(md) {
     max-width: $container-width-md;
-    padding: 0 toRem(40px);
+    padding: 0 toRem(16px);
   }
 
   @include media-breakpoint(lg) {
