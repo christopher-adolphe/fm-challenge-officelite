@@ -18,7 +18,7 @@
     padding-bottom: toRem(64px);
 
     img {
-      width: toRem(170px);
+      width: toRem(200px);
     }
   }
 
@@ -50,7 +50,7 @@
       padding-bottom: 0;
 
       img {
-        width: toRem(280px);
+        width: toRem(310px);
       }
     }
 
@@ -66,10 +66,10 @@
     }
   }
 
-  @include media-breakpoint(xxl) {
+  @include media-breakpoint(xl) {
     &__illustration {
       img {
-        width: toRem(475px);
+        width: toRem(450px);
       }
     }
 
@@ -78,6 +78,14 @@
 
       &:last-of-type {
         margin-bottom: toRem(32px);
+      }
+    }
+  }
+
+  @include media-breakpoint(xxl) {
+    &__illustration {
+      img {
+        width: toRem(505px);
       }
     }
   }

@@ -26,10 +26,17 @@
     }
 
     &--hero {
-      padding-bottom: toRem(894px);
+      padding-bottom: toRem(100px);
     }
 
     &--pricing {
+      .grid {
+        margin-bottom: toRem(-790px);
+      }
+    }
+
+    &--countdown {
+      padding-top: toRem(894px);
       padding-bottom: toRem(100px);
       background-color: $dark-color-2;
       background-image: url('../../assets/images/home/bg-pattern-footer.svg');
@@ -37,19 +44,6 @@
       background-repeat: no-repeat;
       background-size: toRem(1202px) toRem(1202px);
       // background-size: 320vw 320vw;
-
-      .page {
-        &__overlap {
-          position: absolute;
-          top: toRem(-796px);
-          left: toRem(24px);
-          width: calc(100% - toRem(48px));
-        }
-      
-        &__adjust-overlap {
-          padding-top: toRem(894px);
-        }
-      }
     }
   }
 
@@ -85,25 +79,20 @@
 
     &__section {
       &--hero {
-        padding-bottom: toRem(690px);
+        padding-bottom: toRem(140px);
       }
 
       &--pricing {
+        .grid {
+          margin-bottom: toRem(-544px);
+        }
+      }
+
+      &--countdown {
+        padding-top: toRem(598px);
         background-position: center toRem(20px);
         background-size: toRem(1454px) toRem(1454px);
         // background-size: 189vw 189vw;
-
-        .page {
-          &__overlap {
-            top: toRem(-550px);
-            left: toRem(16px);
-            width: calc(100% - toRem(32px));
-          }
-        
-          &__adjust-overlap {
-            padding-top: toRem(598px);
-          }
-        }
       }
     }
 
@@ -121,30 +110,62 @@
 
     &__section {
       &--hero {
-        padding-bottom: toRem(370px);
+        padding-bottom: toRem(184px);
       }
 
       &--pricing {
-        padding-bottom: toRem(90px);
-        background-position: 360% toRem(-615px);
-        background-size: toRem(2036px) toRem(2036px);
-        // background-size: 114vw 114vw;
-
-        .page {
-          &__overlap {
-            top: toRem(-256px);
-          }
-        
-          &__adjust-overlap {
-            padding-top: toRem(336px);
-          }
+        .grid {
+          margin-bottom: toRem(-261px);
         }
+      }
+
+      &--countdown {
+        padding-top: toRem(336px);
+        padding-bottom: toRem(90px);
+        background-position: 92% toRem(-615px);
+        background-size: toRem(2036px) toRem(2036px);
       }
     }
 
     &--home {
-      background-position: 114% toRem(-430px);
+      background-position: 904% toRem(-430px);
       background-size: toRem(1134px) toRem(1134px);
+    }
+  }
+
+  @include media-breakpoint(xxl) {
+    &__section {
+      &--countdown {
+        background-position: 114% toRem(-615px);
+      }
+    }
+
+    &--home {
+      background-position: 236% toRem(-430px);
+    }
+  }
+
+  @include media-breakpoint(1680px) {
+    &__section {
+      &--countdown {
+        background-position: 156% toRem(-615px);
+      }
+    }
+
+    &--home {
+      background-position: 139% toRem(-430px);
+    }
+  }
+
+  @include media-breakpoint(1920px) {
+    &__section {
+      &--countdown {
+        background-position: 360% toRem(-615px);
+      }
+    }
+
+    &--home {
+      background-position: 111.5% toRem(-430px);
     }
   }
 }
