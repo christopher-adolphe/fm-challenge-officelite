@@ -74,6 +74,12 @@
   &-right {
     text-align: right;
   }
+
+  @include media-breakpoint(xl) {
+    &-right--xl {
+      text-align: right;
+    }
+  }
 }
 
 //------------------------------------------------------------------------------

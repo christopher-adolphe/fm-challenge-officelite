@@ -31,6 +31,12 @@
 
     &--pricing {
       padding-bottom: toRem(100px);
+      background-color: $dark-color-2;
+      background-image: url('../../assets/images/home/bg-pattern-footer.svg');
+      background-position: center toRem(160px);
+      background-repeat: no-repeat;
+      background-size: toRem(1202px) toRem(1202px);
+      // background-size: 320vw 320vw;
 
       .page {
         &__overlap {
@@ -65,6 +71,13 @@
     }
   }
 
+  &--home {
+    background-image: url('../../assets/images/home/bg-pattern-header.svg');
+    background-position: center toRem(-170px);
+    background-repeat: no-repeat;
+    background-size: toRem(458px) toRem(458px);
+  }
+
   @include media-breakpoint(md) {
     &__header {
       padding: toRem(80px) 0 toRem(104px) 0;
@@ -76,6 +89,10 @@
       }
 
       &--pricing {
+        background-position: center toRem(20px);
+        background-size: toRem(1454px) toRem(1454px);
+        // background-size: 189vw 189vw;
+
         .page {
           &__overlap {
             top: toRem(-550px);
@@ -88,6 +105,11 @@
           }
         }
       }
+    }
+
+    &--home {
+      background-position: toRem(380px) toRem(-160px);
+      background-size: toRem(666px) toRem(666px);
     }
   }
 
@@ -104,6 +126,9 @@
 
       &--pricing {
         padding-bottom: toRem(90px);
+        background-position: 360% toRem(-615px);
+        background-size: toRem(2036px) toRem(2036px);
+        // background-size: 114vw 114vw;
 
         .page {
           &__overlap {
@@ -115,6 +140,11 @@
           }
         }
       }
+    }
+
+    &--home {
+      background-position: 114% toRem(-430px);
+      background-size: toRem(1134px) toRem(1134px);
     }
   }
 }

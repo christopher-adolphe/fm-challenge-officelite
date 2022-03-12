@@ -8,7 +8,7 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <div class="page">
+  <div id="page-home" class="page page--home">
     <header class="page__header"></header>
 
     <main class="page__content">
@@ -30,7 +30,7 @@
         </div>
       </section>
 
-      <section id="pricing-section" class="page__section page__section--bg-dark page__section--pricing">
+      <section id="pricing-section" class="page__section page__section--pricing">
         <div class="container">
           <div class="page__overlap">
             <div class="grid grid--md">
@@ -55,13 +55,13 @@
                   </div>
   
                   <div class="card__footer">
-                    <button type="button" class="btn btn--secondary">Try for Free</button>
+                    <a href="/" class="btn btn--secondary">Try for Free</a>
                   </div>
                 </div>
               </div>
   
               <div class="grid__item">
-                <div class="card card--bg-blue">
+                <div class="card card--bg-blue card--bg-img">
                   <div class="card__header">
                     <h3 class="card__title card__title--lowercase">Pro</h3>
     
@@ -81,7 +81,7 @@
                   </div>
                   
                   <div class="card__footer">
-                    <button type="button" class="btn btn--tertiary">Try for Free</button>
+                    <a href="/" class="btn btn--tertiary">Try for Free</a>
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@
                   </div>
                   
                   <div class="card__footer">
-                    <button type="button" class="btn btn--secondary">Try for Free</button>
+                    <a href="/" class="btn btn--secondary">Try for Free</a>
                   </div>
                 </div>
               </div>
@@ -116,46 +116,91 @@
 
           <div class="page__adjust-overlap">
             <div class="grid">
-              <div class="grid__item">
-                <h3 class="text-neutral-color-2 text-spacing--sm">Coming <span class="text-blue-color-1">4 Nov 2020</span></h3>
-  
-                <!-- <div class="countdown">
-                  <div class="countdown__counter">
-                    <span class="countdown__digit h1">47</span>
-                    
-                    <h4 class="countdown__title">Days</h4>
+              <div class="grid__item grid__item--full-width">
+                <div class="countdown">
+                  <h3 class="countdown__date text-neutral-color-2 text-spacing--sm">Coming <span class="text-blue-color-1">4 Nov 2020</span></h3>
+
+                  <div class="countdown__content">
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1">47</span>
+                      
+                      <h4 class="countdown__title">Days</h4>
+                    </div>
+    
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1">07</span>
+    
+                      <h4 class="countdown__title">Hours</h4>
+                    </div>
+    
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1">56</span>
+    
+                      <h4 class="countdown__title">Min</h4>
+                    </div>
+    
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1">14</span>
+    
+                      <h4 class="countdown__title">Sec</h4>
+                    </div>
                   </div>
-  
-                  <div class="countdown__counter">
-                    <span class="countdown__digit h1">07</span>
-  
-                    <h4 class="countdown__title">Hours</h4>
+
+                  <div class="countdown__cta">
+                    <a href="/" class="btn btn--primary">Get Started</a>
                   </div>
-  
-                  <div class="countdown__counter">
-                    <span class="countdown__digit h1">56</span>
-  
-                    <h4 class="countdown__title">Min</h4>
-                  </div>
-  
-                  <div class="countdown__counter">
-                    <span class="countdown__digit h1">14</span>
-  
-                    <h4 class="countdown__title">Sec</h4>
-                  </div>
-                </div> -->
-              </div>
-  
-              <div class="grid__item">
-                <button type="button" class="btn btn--primary">Get Started</button>
+                </div>
               </div>
             </div>
+
+
+            <!-- <div class="grid">
+              <div class="grid__item grid__item--full-width">
+                <h3 class="countdown__date text-neutral-color-2 text-spacing--sm">Coming <span class="text-blue-color-1">4 Nov 2020</span></h3>
+              </div>
+            </div> -->
+
+            <!-- <div class="grid grid--md">
+              <div class="grid__item">
+                <div class="countdown">
+                  <div class="countdown__content">
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1">47</span>
+                      
+                      <h4 class="countdown__title">Days</h4>
+                    </div>
+    
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1">07</span>
+    
+                      <h4 class="countdown__title">Hours</h4>
+                    </div>
+    
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1">56</span>
+    
+                      <h4 class="countdown__title">Min</h4>
+                    </div>
+    
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1">14</span>
+    
+                      <h4 class="countdown__title">Sec</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="grid__item text-center text-right--xl">
+                <a href="/" class="btn btn--primary">Get Started</a>
+              </div>
+            </div> -->
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="page__footer"></footer>
+    <!-- <footer class="page__footer"></footer> -->
   </div>
 </body>
 </html>

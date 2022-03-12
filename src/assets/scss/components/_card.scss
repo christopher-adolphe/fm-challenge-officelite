@@ -92,6 +92,13 @@
     box-shadow: $shadow-color-1;
   }
 
+  &--bg-img {
+    background-image: url('../../assets/images/home/bg-pattern-pricing.svg');
+    background-position: center toRem(-376px);
+    background-repeat: no-repeat;
+    background-size: toRem(880px) toRem(880px);
+  }
+
   @include media-breakpoint(md) {
     display: flex;
     flex-wrap: wrap;
@@ -119,6 +126,10 @@
       width: 100%;
       margin-top: toRem(24px);
     }
+
+    &--bg-img {
+      background-position: toRem(-325px) toRem(-250px);
+    }
   }
 
   @include media-breakpoint(xl) {
@@ -142,6 +153,10 @@
 
     &__footer {
       margin-top: toRem(32px);
+    }
+
+    &--bg-img {
+      background-position: center toRem(-368px);
     }
   }
 }
