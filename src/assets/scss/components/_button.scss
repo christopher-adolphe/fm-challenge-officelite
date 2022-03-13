@@ -1,10 +1,10 @@
 @use '../abstracts/' as *;
 
 .btn {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: toRem(14px) toRem(54px);
+  padding: toRem(14px) toRem(40px);
   background-color: $neutral-color-2;
   border-radius: toRem(28px);
   font-family: $font-family-primary-bold;
@@ -15,6 +15,7 @@
 
   &--primary {
     background-color: $blue-color-1;
+    color: $neutral-color-2;
     transition: background-color 0.75s ease-in-out;
 
     &:hover,
@@ -47,13 +48,13 @@
   }
 
   &--shadow {
-    box-shadow: transparent;
-    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out, box-shadow 0.75s ease-in-out;
+    box-shadow: $shadow-color-2;
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
     
-    &:hover,
-    &:focus,
-    &.active {
-      box-shadow: $shadow-color-2;
-    }
+    // &:hover,
+    // &:focus,
+    // &.active {
+    //   box-shadow: $shadow-color-2;
+    // }
   }
 }

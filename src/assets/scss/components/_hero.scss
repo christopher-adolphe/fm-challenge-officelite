@@ -1,44 +1,92 @@
 @use '../abstracts/' as *;
 
 .hero {
-  &__content,
-  &__illustration {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  &__illustration,
+  &__content {
     height: 100%;
   }
 
   &__illustration {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: toRem(64px);
+
     img {
-      width: toRem(340px);
+      width: toRem(200px);
+    }
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: toRem(24px);
+  }
+
+  &__tag-line {
+    line-height: 1.6;
+
+    &:last-of-type {
+      margin-bottom: toRem(24px);
+    }
+  }
+
+  @include media-breakpoint(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__illustration {
+      flex: 1;
+      order: 2;
+      justify-content: flex-end;
+      padding-bottom: 0;
+
+      img {
+        width: toRem(310px);
+      }
     }
 
-    .swiper {
-      width: toRem(600px);
-      height: toRem(400px);
+    &__content {
+      flex: 1;
+      order: 1;
+      text-align: left;
+    }
 
-      &-slide {
-        text-align: center;
+    &__title,
+    &__tag-line {
+      text-align: left;
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    &__illustration {
+      img {
+        width: toRem(450px);
+      }
+    }
+
+    &__tag-line {
+      font-size: toRem(18px);
+
+      &:last-of-type {
+        margin-bottom: toRem(32px);
       }
     }
   }
 
-  &__title {
-    margin-bottom: toRem(48px);
-    color: $dark-color-1;
-    font-size: toRem(72px);
-
-    span {
-      color: $blue-color-1;
-    }
-  }
-
-  &__tag-line {
-    font-family: $font-family-primary-regular;
-    font-size: toRem(24px);
-  }
-
-  @include media-breakpoint(xl) {
-    &__content {
-      padding-right: toRem(120px);
+  @include media-breakpoint(xxl) {
+    &__illustration {
+      img {
+        width: toRem(505px);
+      }
     }
   }
 }

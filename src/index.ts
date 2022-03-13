@@ -1,30 +1,13 @@
-import { Pagination } from "swiper";
-import 'swiper/css/pagination';
-
-import { getDOMElement, generateCopyright, generateSlider } from './assets/js/utilities';
-import customSelect from './assets/js/custom-select';
+import { getDOMElement, generateCopyright } from './assets/js/utilities';
+import { customSelect, countdown } from './assets/js/index';
 
 document.addEventListener('DOMContentLoaded', () => {
   const copyrightElem = getDOMElement('copyright');
+  const countdownElem = getDOMElement('js-countdown');
   
   generateCopyright(copyrightElem);
 
-  const heroSlider = generateSlider('hero-slider', {
-    init: false,
-    centeredSlides: true,
-    effect: 'fade',
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    modules: [ Pagination ],
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    }
-  });
-
-  heroSlider?.init();
-
   customSelect();
+
+  countdown(countdownElem);
 });

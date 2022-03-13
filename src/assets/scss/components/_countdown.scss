@@ -1,0 +1,124 @@
+@use '../abstracts/' as *;
+
+.countdown {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
+  // align-items: stretch;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'countdown-date countdown-date'
+    'countdown countdown'
+    'countdown-cta countdown-cta';
+
+  &__date {
+    grid-area: countdown-date;
+    text-align: center;
+  }
+
+  &__content {
+    grid-area: countdown;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: toRem(40px);
+  }
+
+  &__cta {
+    grid-area: countdown-cta;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: toRem(72px);
+    height: toRem(92px);
+    padding: toRem(10px) toRem(16px);
+    background-color: $dark-color-1;
+    border-radius: toRem(4px);
+
+    &:not(:last-child) {
+      margin-right: toRem(13px);
+    }
+  }
+
+  &__digit,
+  &__title {
+    text-align: center;
+  }
+
+  &__digit {
+    margin-bottom: toRem(4px);
+    font-size: toRem(32px);
+    color: $neutral-color-2;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    font-family: $font-family-primary-bold;
+    font-size: toRem(12px);
+    color: $neutral-color-2--opacity-50;
+  }
+
+  @include media-breakpoint(md) {
+    width: 100%;
+    max-width: toRem(448px);
+    margin: 0 auto;
+
+    &__content {
+      margin-bottom: toRem(48px);
+    }
+
+    &__counter {
+      max-width: toRem(100px);
+      height: toRem(128px);
+      padding: toRem(16px);
+      border-radius: toRem(13px);
+
+      &:not(:last-child) {
+        margin-right: toRem(16px);
+      }
+    }
+
+    &__digit {
+      margin-bottom: toRem(8px);
+      font-size: toRem(56px);
+      line-height: 0.9;
+    }
+
+    &__title {
+      font-size: toRem(16px);
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    grid-template-areas:
+      'countdown-date countdown-date'
+      'countdown countdown-cta'
+      'countdown countdown-cta';
+    max-width: unset;
+    margin: unset;
+
+    &__date {
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    &__content {
+      justify-content: flex-start;
+      margin-bottom: 0;
+    }
+
+    &__cta {
+      justify-content: flex-end;
+    }
+  }
+}

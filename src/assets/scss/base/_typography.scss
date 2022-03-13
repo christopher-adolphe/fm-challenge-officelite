@@ -8,8 +8,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 h1, .h1 {
   margin-bottom: toRem(24px);
-  font-size: toRem(56px);
-  line-height: 1.14;
+  font-size: toRem(40px);
+  line-height: 1.2;
 }
 
 h2, .h2 {
@@ -54,5 +54,12 @@ h4, .h4 {
   &--2 {
     font-size: toRem(18px);
     line-height: 1.56;
+  }
+}
+
+@include media-breakpoint(xxl) {
+  h1, .h1 {
+    font-size: toRem(56px);
+    line-height: 1.16;
   }
 }

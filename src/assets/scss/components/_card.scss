@@ -5,11 +5,62 @@
   background-color: $neutral-color-2;
   border-radius: toRem(13px);
 
-  &__body {
+  &__header,
+  &__body,
+  &__footer {
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
+  }
+
+  &__header {
+    margin-bottom: toRem(56px);
+    color: $dark-color-1;
+
+    .card {
+      &__sub-title {
+        margin-bottom: toRem(8px);
+      }
+
+      &__text {
+        color: $dark-color-1;
+      }
+    }
+  }
+
+  &__body {
+    color: $dark-color-3;
+    text-align: center;
+  }
+
+  &__footer {
+    margin-top: toRem(32px);
+  }
+
+  &__title {
+    margin-bottom: toRem(40px);
+    font-size: toRem(20px);
+    line-height: 1.4;
+
+    &--lowercase {
+      text-transform: none;
+    }
+  }
+
+  &__sub-title {
+    font-size: toRem(56px);
+    line-height: 1.1;
+  }
+
+  &__list {
+    &-item {
+      line-height: 1.75;
+    }
+
+    &-item:not(:last-child) {
+      margin-bottom: toRem(16px);
+    }
   }
 
   &--bg-dark {
@@ -21,8 +72,13 @@
 
     .card {
       &__title,
+      &__sub-title,
       &__text {
         color: $neutral-color-2;
+      }
+
+      &__body {
+        color: $neutral-color-2--opacity-75;
       }
     }
   }
@@ -34,5 +90,73 @@
 
   &--shadow {
     box-shadow: $shadow-color-1;
+  }
+
+  &--bg-img {
+    background-image: url('../../assets/images/home/bg-pattern-pricing.svg');
+    background-position: center toRem(-376px);
+    background-repeat: no-repeat;
+    background-size: toRem(880px) toRem(880px);
+  }
+
+  @include media-breakpoint(md) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: toRem(48px);
+
+    &__header,
+    &__body {
+      align-items: flex-start;
+      width: 50%;
+    }
+
+    &__header {
+      margin-bottom: 0;
+    }
+
+    &__body {
+      justify-content: flex-end;
+      text-align: left;
+    }
+
+    &__footer {
+      align-items: flex-start;
+      width: 100%;
+      margin-top: toRem(24px);
+    }
+
+    &--bg-img {
+      background-position: toRem(-325px) toRem(-250px);
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    flex-direction: column;
+
+    &__header,
+    &__body,
+    &__footer {
+      align-items: center;
+      width: unset;
+    }
+
+    &__header {
+      margin-bottom: toRem(56px);
+    }
+
+    &__body {
+      justify-content: stretch;
+      text-align: center;
+    }
+
+    &__footer {
+      margin-top: toRem(32px);
+    }
+
+    &--bg-img {
+      background-position: center toRem(-368px);
+    }
   }
 }

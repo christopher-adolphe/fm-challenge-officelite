@@ -6,5 +6,12 @@
     width: 100%;
     max-width: toRem(154px);
     height: toRem(30px);
+    margin: 0 auto;
+  }
+
+  @include media-breakpoint(md) {
+    &__brand {
+      margin: unset;
+    }
   }
 }
