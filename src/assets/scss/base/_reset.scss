@@ -87,7 +87,6 @@ body {
 p {
   margin: 0;
   color: $dark-color-3;
-  word-break: break-all;
 
   &:not(:last-child) {
     margin-bottom: toRem(16px);

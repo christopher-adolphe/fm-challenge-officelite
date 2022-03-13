@@ -8,78 +8,111 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <div class="page">
+  <div id="page-sign-up" class="page page--sign-up">
     <header class="page__header"></header>
 
     <main class="page__content page__section--bg-light-1">
-      <section class="page__section">
+      <section id="section-hero" class="page__section page__section--hero">
         <div class="container">
-          <div class="grid">
-            <div class="grid__item">
-              <div class="hero__content d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-start">
-                <h1 class="hero__title">Ready, Get Set, <span>Code</span></h1>
-  
-                <p class="hero__tag-line">A great boilerplate to quickly start any front-end development project using TypeScript, Sass and webpack 5.</p>
-              </div>
+          <div class="hero">
+            <div class="hero__illustration">
+              <img class="image" src="assets/images/home/illustration-charts.svg" alt="Officelite platform screenshot" />
             </div>
 
-            <div class="grid__item">
-              <div class="hero__illustration d-flex d-flex--col d-flex--justify-content-center d-flex--align-items-center">
-                <!-- <img class="image" src="assets/images/logo-webpack.svg" alt="Webpack" /> -->
-                <!-- Slider main container -->
-                <div id="hero-slider" class="swiper">
-                  <!-- Additional required wrapper -->
-                  <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                      <img src="assets/images/logo-typescript.svg" alt="TypeScript" />
-                    </div>
+            <div class="hero__content">
+              <h1 class="hero__title">Work smarter. Save time.</h1>
 
-                    <div class="swiper-slide">
-                      <img src="assets/images/logo-sass.svg" alt="Sass" />
-                    </div>
+              <p class="hero__tag-line">Easily manage your projects. Get on the list and receive in-app perks available only to
+                early subscribers. We are moving into final development and getting ready for official launch soon.</p>
 
-                    <div class="swiper-slide">
-                      <img class="image" src="assets/images/logo-webpack.svg" alt="Webpack" />
+                <div id="js-countdown" class="countdown countdown--light" data-countdown-days="90">
+                  <h3 class="countdown__date text-neutral-color-2 text-spacing--sm js-countdown-date">Coming <span class="text-blue-color-1"></span></h3>
+  
+                  <div class="countdown__content">
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1 js-countdown-days">00</span>
+                      
+                      <h4 class="countdown__title">Days</h4>
+                    </div>
+    
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1 js-countdown-hours">00</span>
+    
+                      <h4 class="countdown__title">Hours</h4>
+                    </div>
+    
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1 js-countdown-minutes">00</span>
+    
+                      <h4 class="countdown__title">Min</h4>
+                    </div>
+    
+                    <div class="countdown__counter">
+                      <span class="countdown__digit h1 js-countdown-seconds">00</span>
+    
+                      <h4 class="countdown__title">Sec</h4>
                     </div>
                   </div>
-
-                  <div class="swiper-pagination"></div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="page__section page__section--bg-light-2">
-        Work smarter. Save time.
-
-        Easily manage your projects. Get on the list and receive in-app perks available only to 
-        early subscribers. We are moving into final development and getting ready for official launch soon.
-
-        <!-- If you're choosing to make this date dynamic, set it to 30 days in the future from the moment the visitor views the page -->
-        Coming 4 Nov 2020
-
-        <!-- If you're choosing to make this timer dynamic, have it countdown from the date you set above -->
-        47 Days
-        07 Hours
-        56 Min
-        14 Sec
-
-        Name
-        Email Address
-        Basic Pack Free
-        Basic Pack Free
-        Pro Pack $9.99
-        Ultimate Pack $19.99
-        Phone Number
-        Company
-        Get on the list
+      <section id="section-signup-form" class="page__section page__section--signup-form">
+        <div class="container">
+          <div class="card">
+            <form class="form">
+              <div class="form__group">
+                <label for="text-field-name" class="form__label visually-hidden">Name</label>
+  
+                <input type="text" id="text-field-name" class="form__control" placeholder="Name" />
+  
+                <span class="form__error">Name Field Error <span class="form__error-icon"></span></span>
+              </div>
+  
+              <div class="form__group">
+                <label for="text-field-email" class="form__label visually-hidden">Email Address</label>
+  
+                <input type="text" id="text-field-email" class="form__control" placeholder="Email Address" />
+  
+                <span class="form__error">Email Address Field Error <span class="form__error-icon"></span></span>
+              </div>
+  
+              <div class="form__group">
+                <label for="select-field-pack" class="form__label visually-hidden">Pack</label>
+  
+                <select id="select-field-pack" class="form__select js-select" data-option-types="Free $9.99 $19.99">
+                  <option value="Basic Pack">Basic Pack</option>
+                  <option value="Pro Pack">Pro Pack</option>
+                  <option value="Ultimate Pack">Ultimate Pack</option>
+                </select>
+  
+                <span class="form__error">Pack Field Error <span class="form__error-icon"></span></span>
+              </div>
+  
+              <div class="form__group">
+                <label for="text-field-phone" class="form__label visually-hidden">Phone Number</label>
+  
+                <input type="text" id="text-field-phone" class="form__control" placeholder="Phone Number" />
+  
+                <span class="form__error">Phone Number Field Error <span class="form__error-icon"></span></span>
+              </div>
+  
+              <div class="form__group">
+                <label for="text-field-company" class="form__label visually-hidden">Company</label>
+  
+                <input type="text" id="text-field-company" class="form__control" placeholder="Company" />
+  
+                <span class="form__error">Company Field Error <span class="form__error-icon"></span></span>
+              </div>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer class="page__footer"></footer>
+    <!-- <footer class="page__footer"></footer> -->
   </div>
 </body>
 </html>

@@ -81,6 +81,7 @@
         &-list {
           clip-path: polygon(-130% 0, 130% 0, 130% 140%, 0 140%);
           opacity: 1;
+          z-index: $zindex-dropdown;
 
           &--dropup {
             clip-path: polygon(-130% 0, 130% 0, 130% 140%, 0 140%);

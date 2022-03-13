@@ -1,10 +1,6 @@
 @use '../abstracts/' as *;
 
 .countdown {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-start;
-  // align-items: stretch;
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: repeat(2, 1fr);
@@ -38,8 +34,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    width: 100%;
-    max-width: toRem(72px);
+    width: toRem(72px);
     height: toRem(92px);
     padding: toRem(10px) toRem(16px);
     background-color: $dark-color-1;
@@ -68,6 +63,26 @@
     color: $neutral-color-2--opacity-50;
   }
 
+  &--light {
+    .countdown {
+      &__date {
+        color: $dark-color-1;
+      }
+
+      &__counter {
+        background-color: $blue-color-1--opacity-10;
+      }
+
+      &__digit {
+        color: $blue-color-1;
+      }
+
+      &__title {
+        color: $dark-color-1--opacity-50;
+      }
+    }
+  }
+
   @include media-breakpoint(md) {
     width: 100%;
     max-width: toRem(448px);
@@ -78,7 +93,7 @@
     }
 
     &__counter {
-      max-width: toRem(100px);
+      width: toRem(100px);
       height: toRem(128px);
       padding: toRem(16px);
       border-radius: toRem(13px);
