@@ -12,7 +12,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    margin-bottom: toRem(24px);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(24px);
+    }
 
     &--is-invalid {
       .form {
