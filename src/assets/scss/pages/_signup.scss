@@ -1,0 +1,149 @@
+@use '../abstracts/' as *;
+
+.page--signup {
+  .page {
+    &__header {
+      z-index: 1;
+    }
+
+    &__content {
+      position: relative;
+      height: max-content;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: toRem(320px);
+        content: '';
+        background-color: $dark-color-2;
+        background-image: url('../../assets/images/sign-up/bg-pattern-side.svg');
+        background-position: center toRem(-404px);
+        background-repeat: no-repeat;
+        background-size: toRem(1202px) toRem(1202px);
+        z-index: -1;
+      }
+    }
+  }
+
+  .hero {
+    &__content,
+    &__title,
+    &__tag-line {
+      text-align: center;
+    }
+
+    &__content {
+      order: 1;
+    }
+
+    &__form {
+      order: 2;
+      width: 100%;
+    }
+
+    .card {
+      padding: toRem(24px);
+    }
+  }
+
+  @include media-breakpoint(md) {
+    background-image: none;
+
+    .page {
+      &__content {
+        &::after {
+          height: toRem(380px);
+          background-position: center toRem(-535px);
+          background-size: toRem(1454px) toRem(1454px);
+        }
+      }
+    }
+
+    .hero {
+      flex-direction: column;
+
+      &__content {
+        max-width: toRem(572px);
+      }
+
+      &__form {
+        max-width: toRem(448px);
+      }
+
+      .card {
+        padding: toRem(42px);
+      }
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    .page {
+      &__content {
+        margin-top: toRem(-212px);
+
+        &::after {
+          max-width: toRem(360px);
+          height: 100%;
+          background-position: center toRem(-780px);
+          background-size: toRem(2036px) toRem(2036px);
+        }
+      }
+
+      &__section--hero {
+        height: calc(100vh - toRem(212px));
+        padding-bottom: 0;
+      }
+    }
+
+    .hero {
+      flex-direction: row;
+      margin-top: toRem(212px);
+
+      &__content,
+      &__title,
+      &__tag-line {
+        text-align: left;
+      }
+
+      &__content {
+        max-width: toRem(540px);
+      }
+
+      .form {
+        box-shadow: $shadow-color-1;
+      }
+    }
+  }
+
+  @include media-breakpoint(xxl) {
+    .page {
+      &__content {
+        &::after {
+          max-width: toRem(420px);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint(1680px) {
+    .page {
+      &__content {
+        &::after {
+          max-width: toRem(550px);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint(1920px) {
+    .page {
+      &__content {
+        &::after {
+          max-width: toRem(670px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@use '../abstracts/' as *;
+
+.page--home {
+  .page {
+    &__section {
+      &--pricing {
+        .grid {
+          margin-bottom: toRem(-790px);
+        }
+      }
+  
+      &--countdown {
+        padding-top: toRem(894px);
+        padding-bottom: toRem(100px);
+        background-color: $dark-color-2;
+        background-image: url('../../assets/images/home/bg-pattern-footer.svg');
+        background-position: center toRem(160px);
+        background-repeat: no-repeat;
+        background-size: toRem(1202px) toRem(1202px);
+      }
+    }
+  }
+
+  @include media-breakpoint(md) {
+    background-position: toRem(380px) toRem(-160px);
+    background-size: toRem(666px) toRem(666px);
+
+    .page {
+      &__section {
+        &--pricing {
+          .grid {
+            margin-bottom: toRem(-544px);
+          }
+        }
+  
+        &--countdown {
+          padding-top: toRem(598px);
+          background-position: center toRem(20px);
+          background-size: toRem(1454px) toRem(1454px);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    background-position: 904% toRem(-430px);
+    background-size: toRem(1134px) toRem(1134px);
+
+    .page {
+      &__section {
+        &--pricing {
+          .grid {
+            margin-bottom: toRem(-261px);
+          }
+        }
+  
+        &--countdown {
+          padding-top: toRem(336px);
+          padding-bottom: toRem(90px);
+          background-position: 92% toRem(-615px);
+          background-size: toRem(2036px) toRem(2036px);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint(xxl) {
+    background-position: 236% toRem(-430px);
+
+    .page {
+      &__section {
+        &--countdown {
+          background-position: 114% toRem(-615px);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint(1680px) {
+    background-position: 139% toRem(-430px);
+
+    .page {
+      &__section {
+        &--countdown {
+          background-position: 156% toRem(-615px);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint(1920px) {
+    background-position: 111.5% toRem(-430px);
+
+    .page {
+      &__section {
+        &--countdown {
+          background-position: 360% toRem(-615px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use '../abstracts/' as *;
+
+.page--design-system {
+  .page {
+    &__header {
+      padding-bottom: toRem(24px);
+    }
+  }
+
+  @include media-breakpoint(md) {
+    .page {
+      &__header {
+        padding-bottom: toRem(24px);
+      }
+    }
+  }
+
+  @include media-breakpoint(xl) {
+    .page {
+      &__header {
+        padding-bottom: toRem(24px);
+      }
+    }
+  }
+
+  @include media-breakpoint(xxl) {
+    .page {
+      &__header {
+        padding-bottom: toRem(24px);
+      }
+    }
+  }
+}
