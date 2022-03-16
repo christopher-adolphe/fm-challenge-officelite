@@ -53,65 +53,71 @@
             </div>
 
             <div class="hero__form">
-              <form id="js-signup" class="form card">
-                <div class="form__group">
-                  <label for="name" class="form__label visually-hidden">Name</label>
+              <div class="hero__card">
+                <form id="js-signup" class="form card hero__card-front">
+                  <div class="form__group">
+                    <label for="name" class="form__label visually-hidden">Name</label>
+      
+                    <input type="text" id="name" class="form__control" placeholder="Name" />
+      
+                    <span class="form__error">
+                      <span class="form__error-icon"></span>
+                    </span>
+                  </div>
+      
+                  <div class="form__group">
+                    <label for="email" class="form__label visually-hidden">Email Address</label>
+      
+                    <input type="text" id="email" class="form__control" placeholder="Email Address" />
+      
+                    <span class="form__error">
+                      <span class="form__error-icon"></span>
+                    </span>
+                  </div>
+      
+                  <div class="form__group">
+                    <label for="pack" class="form__label visually-hidden">Pack</label>
+      
+                    <select id="pack" class="form__select js-select" data-option-types="Free $9.99 $19.99">
+                      <option value="Basic Pack">Basic Pack</option>
+                      <option value="Pro Pack">Pro Pack</option>
+                      <option value="Ultimate Pack">Ultimate Pack</option>
+                    </select>
+      
+                    <span class="form__error">
+                      <span class="form__error-icon"></span>
+                    </span>
+                  </div>
+      
+                  <div class="form__group">
+                    <label for="phone" class="form__label visually-hidden">Phone Number</label>
+      
+                    <input type="text" id="phone" class="form__control" placeholder="Phone Number" />
+      
+                    <span class="form__error">
+                      <span class="form__error-icon"></span>
+                    </span>
+                  </div>
+      
+                  <div class="form__group">
+                    <label for="company" class="form__label visually-hidden">Company</label>
+      
+                    <input type="text" id="company" class="form__control" placeholder="Company" />
+      
+                    <span class="form__error">
+                      <span class="form__error-icon"></span>
+                    </span>
+                  </div>
     
-                  <input type="text" id="name" class="form__control" placeholder="Name" />
-    
-                  <span class="form__error">
-                    <span class="form__error-icon"></span>
-                  </span>
-                </div>
-    
-                <div class="form__group">
-                  <label for="email" class="form__label visually-hidden">Email Address</label>
-    
-                  <input type="text" id="email" class="form__control" placeholder="Email Address" />
-    
-                  <span class="form__error">
-                    <span class="form__error-icon"></span>
-                  </span>
-                </div>
-    
-                <div class="form__group">
-                  <label for="pack" class="form__label visually-hidden">Pack</label>
-    
-                  <select id="pack" class="form__select js-select" data-option-types="Free $9.99 $19.99">
-                    <option value="Basic Pack">Basic Pack</option>
-                    <option value="Pro Pack">Pro Pack</option>
-                    <option value="Ultimate Pack">Ultimate Pack</option>
-                  </select>
-    
-                  <span class="form__error">
-                    <span class="form__error-icon"></span>
-                  </span>
-                </div>
-    
-                <div class="form__group">
-                  <label for="phone" class="form__label visually-hidden">Phone Number</label>
-    
-                  <input type="text" id="phone" class="form__control" placeholder="Phone Number" />
-    
-                  <span class="form__error">
-                    <span class="form__error-icon"></span>
-                  </span>
-                </div>
-    
-                <div class="form__group">
-                  <label for="company" class="form__label visually-hidden">Company</label>
-    
-                  <input type="text" id="company" class="form__control" placeholder="Company" />
-    
-                  <span class="form__error">
-                    <span class="form__error-icon"></span>
-                  </span>
-                </div>
+                  <div class="form__group mt">
+                    <button type="submit" class="btn btn--primary">Get on the list</button>
+                  </div>
+                </form>
   
-                <div class="form__group mt">
-                  <button type="submit" class="btn btn--primary">Get on the list</button>
+                <div class="card hero__card-back">
+                  <h3>Thank you</h3>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

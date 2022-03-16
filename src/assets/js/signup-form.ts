@@ -16,13 +16,13 @@ export default function signupForm(elem: HTMLElement | null) {
       formData[inputElem.id] = {
         elem: getDOMElement(inputElem.id),
         value: inputElem.value,
-        isValid: true
+        isValid: false
       };
     } else if (inputElem.type === 'radio' && inputElem.checked) {
       formData[inputElem.id] = {
         elem: null,
         value: inputElem.value,
-        isValid: true
+        isValid: false
       };
     }
   });
@@ -65,8 +65,21 @@ export default function signupForm(elem: HTMLElement | null) {
     // give an invalid feedback (e.g: shake the form)
     // 2. Else send form data and give a valid feedback
     // (e.g: hide the form and show a green tick)
+    const isFormValid = Object.keys(formData)
+      .map(key => formData[key].isValid)
+      .every(validity => validity === true);
 
-    console.log('onSubmitHandler formData: ', formData);
+    if (isFormValid) {
+      const heroCardElem = elem.parentElement;
+
+      heroCardElem?.classList.add('hero__card--flip');
+    } else {
+      elem.classList.add('shake-horizontal');
+    }
+
+    setTimeout(() => {
+      elem.classList.remove('shake-horizontal');
+    }, 1000);
   };
 
   elem.addEventListener('submit', onSubmitHandler);
