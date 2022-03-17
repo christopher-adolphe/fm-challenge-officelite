@@ -1,15 +1,12 @@
 import { getDOMElement, isNotEmpty, isEmailValid, isPhoneValid } from './utilities';
 
-export default function signupForm(elem: HTMLElement | null) {
-  if (!elem) {
+export default function signupForm(formElem: HTMLElement | null) {
+  if (!formElem) {
     return;
   }
 
-  // console.log('signupFormElem: ', elem);
-
   const formData: { [key: string]: { elem: HTMLElement | null, value: string, isValid: boolean } } = {};
-
-  const inputElems: NodeListOf<HTMLInputElement> = elem.querySelectorAll('input');
+  const inputElems: NodeListOf<HTMLInputElement> = formElem.querySelectorAll('input');
 
   inputElems.forEach(inputElem => {     
     if (inputElem.type === 'text') {
@@ -27,9 +24,12 @@ export default function signupForm(elem: HTMLElement | null) {
     }
   });
 
+  console.log('inputElems: ', inputElems);
+  console.log('formData: ', formData);
+
   const onBlurHandler = (event: Event) => {
     const { id, value } = event.target as HTMLInputElement;
-    const formGroupElem = (event.target as HTMLInputElement).parentElement;
+    const formGroupElem: HTMLElement | null = (event.target as HTMLInputElement).parentElement;
 
     switch (id) {
       case 'name':
@@ -70,19 +70,34 @@ export default function signupForm(elem: HTMLElement | null) {
       .every(validity => validity === true);
 
     if (isFormValid) {
-      const heroCardElem = elem.parentElement;
+      const heroCardElem: HTMLElement | null = formElem.parentElement;
 
       heroCardElem?.classList.add('hero__card--flip');
+
+      (formElem as HTMLFormElement).reset();
+
+      setTimeout(() => {
+        heroCardElem?.classList.remove('hero__card--flip');
+      }, 6000);
     } else {
-      elem.classList.add('shake-horizontal');
+      Object.keys(formData).forEach(key => {
+        const { elem, isValid } = formData[key];
+        const formGroupElem: HTMLElement | null | undefined = elem?.parentElement;
+
+        if (!isValid) {
+          formGroupElem?.classList.add('form__group--is-invalid');
+        }
+      });
+      formElem.classList.add('shake-horizontal');
+
+      setTimeout(() => {
+        formElem.classList.remove('shake-horizontal');
+      }, 1000);
     }
 
-    setTimeout(() => {
-      elem.classList.remove('shake-horizontal');
-    }, 1000);
   };
 
-  elem.addEventListener('submit', onSubmitHandler);
+  formElem.addEventListener('submit', onSubmitHandler);
 
   Object.keys(formData).forEach(key => {
     if (formData[key].elem !== null) {

@@ -1,13 +1,13 @@
 export default function customSelect() {
   const selectElems: NodeListOf<HTMLSelectElement> = document.querySelectorAll('.js-select');
 
-  const createCustomSelectElem = (options: string[], index: number, optionTypes: string[]): HTMLDivElement => {
+  const createCustomSelectElem = (options: string[], selectedOption: string, index: number, optionTypes: string[]): HTMLDivElement => {
     const customSelectElem: HTMLDivElement = document.createElement('div');
     const customSelectValueElem: HTMLSpanElement = document.createElement('span');
     const customSelectListElem: HTMLUListElement = document.createElement('ul');
 
     if (options.length) {
-      options.map((option: string, optionIdx: number) => {
+      options.forEach((option: string, optionIdx: number) => {
         const attrValue = option.split(' ').join('-').toLowerCase();
         const listElem: HTMLLIElement = document.createElement('li');
         const labelElem: HTMLLabelElement = document.createElement('label');
@@ -36,6 +36,11 @@ export default function customSelect() {
           optionElem.setAttribute('value', option);
         }
 
+        if (option === selectedOption) {
+          optionElem.setAttribute('checked', 'checked');
+          customSelectValueElem.textContent = `${selectedOption} ${optionTypes[optionIdx]}`;
+        }
+
         listElem.append(labelElem, optionElem);
 
         customSelectListElem.append(listElem);
@@ -55,6 +60,7 @@ export default function customSelect() {
   selectElems.forEach((select: HTMLSelectElement, index: number) => {
     const optionElems: NodeListOf<HTMLOptionElement> = select.querySelectorAll('option');
     const options: string[] = [];
+    let selectedOption = '';
     let types: string[] = [];
 
     if (select.dataset.optionTypes) {
@@ -66,12 +72,16 @@ export default function customSelect() {
     optionElems.forEach((option: HTMLOptionElement) => {
       const value: string | null = option.getAttribute('value');
 
+      if (value && option.selected) {
+        selectedOption = value;
+      }
+
       if (value) {
         options.push(value);
       }
     });
 
-    const customSelect = createCustomSelectElem(options, index, types);
+    const customSelect = createCustomSelectElem(options, selectedOption, index, types);
     let selectListElem: HTMLElement;
 
     select.insertAdjacentElement('afterend', customSelect);

@@ -195,6 +195,10 @@
   &--xl {
     margin-top: toRem(160px);
   }
+
+  &--none {
+    margin-top: 0 !important;
+  }
 }
 
 .mb {
@@ -214,6 +218,10 @@
 
   &--xl {
     margin-bottom: toRem(160px);
+  }
+
+  &--none {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -238,6 +246,10 @@
   &--xl {
     margin-left: toRem(160px);
   }
+
+  &--none {
+    margin-left: 0 !important;
+  }
 }
 
 .mr {
@@ -257,6 +269,10 @@
 
   &--xl {
     margin-right: toRem(160px);
+  }
+
+  &--none {
+    margin-right: 0 !important;
   }
 }
 
@@ -281,6 +297,10 @@
   &--xl {
     padding-top: toRem(160px);
   }
+
+  &--none {
+    padding-top: 0 !important;
+  }
 }
 
 .pb {
@@ -300,6 +320,10 @@
 
   &--xl {
     padding-bottom: toRem(160px);
+  }
+
+  &--none {
+    padding-bottom: 0 !important;
   }
 }
 

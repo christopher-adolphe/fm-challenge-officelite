@@ -79,7 +79,7 @@
                     <label for="pack" class="form__label visually-hidden">Pack</label>
       
                     <select id="pack" class="form__select js-select" data-option-types="Free $9.99 $19.99">
-                      <option value="Basic Pack">Basic Pack</option>
+                      <option value="Basic Pack" selected>Basic Pack</option>
                       <option value="Pro Pack">Pro Pack</option>
                       <option value="Ultimate Pack">Ultimate Pack</option>
                     </select>
@@ -115,7 +115,13 @@
                 </form>
   
                 <div class="card hero__card-back">
-                  <h3>Thank you</h3>
+                  <div class="card__header mb--none">
+                    <h3 class="card__title card__title--lowercase">You are now on the list.</h3>
+
+                    <p class="card__sub-title h1">Great!</p>
+
+                    <p class="card__text">Thank you for subscribing.</p>
+                  </div>
                 </div>
               </div>
             </div>
