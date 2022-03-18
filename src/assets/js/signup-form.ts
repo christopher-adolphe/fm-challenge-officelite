@@ -5,10 +5,11 @@ export default function signupForm(formElem: HTMLElement | null) {
     return;
   }
 
-  const formData: { [key: string]: { elem: HTMLElement | null, value: string, isValid: boolean } } = {};
+  const formData: { [key: string]: { elem: HTMLElement | null, value: string, isValid: boolean, isChecked?: boolean } } = {};
   const inputElems: NodeListOf<HTMLInputElement> = formElem.querySelectorAll('input');
+  let defaultOptionElem: HTMLInputElement;
 
-  inputElems.forEach(inputElem => {     
+  inputElems.forEach(inputElem => {    
     if (inputElem.type === 'text') {
       formData[inputElem.id] = {
         elem: getDOMElement(inputElem.id),
@@ -16,16 +17,23 @@ export default function signupForm(formElem: HTMLElement | null) {
         isValid: false
       };
     } else if (inputElem.type === 'radio' && inputElem.checked) {
+      defaultOptionElem = inputElem;
+
       formData[inputElem.id] = {
-        elem: null,
+        elem: getDOMElement(inputElem.id),
         value: inputElem.value,
-        isValid: false
+        isValid: true,
+        isChecked: inputElem.checked
+      };
+    } else {
+      formData[inputElem.id] = {
+        elem: getDOMElement(inputElem.id),
+        value: inputElem.value,
+        isValid: true,
+        isChecked: inputElem.checked
       };
     }
   });
-
-  console.log('inputElems: ', inputElems);
-  console.log('formData: ', formData);
 
   const onBlurHandler = (event: Event) => {
     const { id, value } = event.target as HTMLInputElement;
@@ -44,6 +52,24 @@ export default function signupForm(formElem: HTMLElement | null) {
       case 'phone':
         formData[id].isValid = isPhoneValid(value);
         break;
+
+      case 'basic-pack':
+        formData[id].isChecked = true;
+        formData['pro-pack'].isChecked = false;
+        formData['ultimate-pack'].isChecked = false;
+        break;
+
+      case 'pro-pack':
+        formData[id].isChecked = true;
+        formData['basic-pack'].isChecked = false;
+        formData['ultimate-pack'].isChecked = false;
+        break;
+
+      case 'ultimate-pack':
+        formData[id].isChecked = true;
+        formData['basic-pack'].isChecked = false;
+        formData['pro-pack'].isChecked = false;
+        break;
     
       default:
         break;
@@ -61,10 +87,6 @@ export default function signupForm(formElem: HTMLElement | null) {
   const onSubmitHandler = (event: Event) => {
     event.preventDefault();
 
-    // 1. If any input is invalid return immediately and
-    // give an invalid feedback (e.g: shake the form)
-    // 2. Else send form data and give a valid feedback
-    // (e.g: hide the form and show a green tick)
     const isFormValid = Object.keys(formData)
       .map(key => formData[key].isValid)
       .every(validity => validity === true);
@@ -74,11 +96,23 @@ export default function signupForm(formElem: HTMLElement | null) {
 
       heroCardElem?.classList.add('hero__card--flip');
 
-      (formElem as HTMLFormElement).reset();
-
       setTimeout(() => {
+        (formElem as HTMLFormElement).reset();
+        defaultOptionElem.click();
+
+        Object.keys(formData).forEach(key => {
+          if ((formData[key].elem as HTMLInputElement).type === 'text') {
+            formData[key].value = '';
+            formData[key].isValid = false;
+          }
+
+          formData['basic-pack'].isChecked = true;
+          formData['pro-pack'].isChecked = false;
+          formData['ultimate-pack'].isChecked = false;
+        });
+
         heroCardElem?.classList.remove('hero__card--flip');
-      }, 6000);
+      }, 5000);
     } else {
       Object.keys(formData).forEach(key => {
         const { elem, isValid } = formData[key];
@@ -100,8 +134,6 @@ export default function signupForm(formElem: HTMLElement | null) {
   formElem.addEventListener('submit', onSubmitHandler);
 
   Object.keys(formData).forEach(key => {
-    if (formData[key].elem !== null) {
-      formData[key].elem?.addEventListener('blur', onBlurHandler);
-    }
+    formData[key].elem?.addEventListener('blur', onBlurHandler);
   });
 }
