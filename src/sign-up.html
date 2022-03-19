@@ -9,9 +9,11 @@
 </head>
 <body>
   <div id="page-signup" class="page page--signup">
+    <a href="#main" class="page__skip-link">Skip to main content</a>
+
     <header class="page__header"></header>
 
-    <main class="page__content">
+    <main id="main" class="page__content">
       <section id="section-hero" class="page__section page__section--hero">
         <div class="container">
           <div class="hero">
@@ -106,7 +108,8 @@
                   </div>
     
                   <div class="form__group mt">
-                    <button type="submit" class="btn btn--primary">Get on the list</button>
+                    <button type="submit" class="btn btn--primary" title="Get on the list" aria-label="Get on the list and receive in-app perks available only to
+                    early subscribers">Get on the list</button>
                   </div>
                 </form>
   
@@ -125,8 +128,6 @@
         </div>
       </section>
     </main>
-
-    <!-- <footer class="page__footer"></footer> -->
   </div>
 </body>
 </html>

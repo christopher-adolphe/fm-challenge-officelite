@@ -8,6 +8,29 @@
   width: 100%;
   height: 100vh;
 
+  &__skip-link {
+    position: absolute;
+    top: toRem(4px);
+    left: toRem(4px);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: toRem(7px) toRem(20px);
+    border-radius: toRem(20px);
+    font-family: $font-family-primary-bold;
+    font-size: toRem(14px);
+    line-height: 1.75;
+    background-color: $blue-color-1;
+    color: $neutral-color-2;
+    z-index: $zindex-sticky;
+    transform: translateY(calc(-100% - 8px));
+    transition: transform 0.75s ease-in-out;
+
+    &:focus {
+      transform: translateY(0);
+    }
+  }
+
   &__header {
     padding: toRem(46px) 0 toRem(80px) 0;
   }

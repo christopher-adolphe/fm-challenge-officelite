@@ -49,8 +49,20 @@ module.exports = merge(common, {
       new CopyPlugin({
         patterns: [
           {
-            from: 'src/assets/images/*',
+            from: 'src/assets/images/',
             to: 'assets/images/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/home/',
+            to: 'assets/images/home/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/shared/',
+            to: 'assets/images/shared/[name][ext]'
+          },
+          {
+            from: 'src/assets/images/sign-up/',
+            to: 'assets/images/sign-up/[name][ext]'
           },
           {
             from: 'src/assets/fonts/*',
