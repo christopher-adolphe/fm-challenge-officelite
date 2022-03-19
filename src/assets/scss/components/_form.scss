@@ -69,6 +69,7 @@
       background-size: cover;
       transform: rotate(0deg);
       transition: transform 0.25s ease-in-out;
+      z-index: 1;
     }
 
     &--custom {
@@ -99,6 +100,7 @@
       width: 100%;
       height: toRem(44px);
       padding: 0 toRem(16px) toRem(16px) toRem(16px);
+      z-index: 2;
     }
 
     &-list {
@@ -114,7 +116,7 @@
       box-shadow: $shadow-color-3;
       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
       opacity: 0;
-      transition: clip-path 0.25s ease-in-out, opacity 0.75s ease-in-out;
+      transition: clip-path 0.25s ease-in-out;
       overflow-y: auto;
 
       &::-webkit-scrollbar-track {
@@ -126,7 +128,7 @@
         bottom: 40%;
         clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
         opacity: 0;
-        transition: clip-path 0.25s ease-in-out, opacity 0.75s ease-in-out;
+        transition: clip-path 0.25s ease-in-out;
       }
     }
 
@@ -168,6 +170,7 @@
     &-type {
       margin-left: toRem(8px);
       color: $dark-color-1--opacity-50;
+      pointer-events: none;
     }
   }
 

@@ -30,15 +30,25 @@ export default function customSelect() {
           optionTypeElem.className = 'form__select-type';
           optionTypeElem.textContent = optionTypes[optionIdx];
 
-          labelElem.insertAdjacentElement('beforeend', optionTypeElem)
+          labelElem.insertAdjacentElement('beforeend', optionTypeElem);
           optionElem.setAttribute('value', `${option} ${optionTypes[optionIdx]}`);
         } else {
           optionElem.setAttribute('value', option);
         }
 
-        if (option === selectedOption) {
+        if (option === selectedOption && optionTypes.length) {
+          const selectedOptionTypeElem: HTMLSpanElement = document.createElement('span');
+
+          selectedOptionTypeElem.className = 'form__select-type';
+          selectedOptionTypeElem.textContent = optionTypes[optionIdx];
           optionElem.setAttribute('checked', 'checked');
-          customSelectValueElem.textContent = `${selectedOption} ${optionTypes[optionIdx]}`;
+          customSelectValueElem.textContent = selectedOption;
+          customSelectValueElem.insertAdjacentElement('beforeend', selectedOptionTypeElem);
+        }
+        
+        if (option === selectedOption && !optionTypes.length) {
+          optionElem.setAttribute('checked', 'checked');
+          customSelectValueElem.textContent = selectedOption;
         }
 
         listElem.append(labelElem, optionElem);
@@ -117,20 +127,20 @@ export default function customSelect() {
           const optionElem = event.target as HTMLInputElement;
 
           if (optionElem.type === 'radio') {
-            // if (types.length) {
-            //   const valueTypeElem: HTMLSpanElement = document.createElement('span');
-            //   const type = optionElem.value.split(' ').pop();
-            //   const value = optionElem.value.split(' ').filter(t => t !== type);
+            if (types.length) {
+              const valueTypeElem: HTMLSpanElement = document.createElement('span');
+              const value = optionElem.value.split(' ').slice(0, 2).join(' ');
+              const type = optionElem.value.split(' ').pop();
 
-            //   valueTypeElem.className = 'form__select-type';
-            //   valueTypeElem.textContent = type || '';
+              valueTypeElem.className = 'form__select-type';
+              valueTypeElem.textContent = type || '';
 
-            //   customSelectValueElem.textContent = value.join(' ');
-            //   customSelectValueElem.insertAdjacentElement('beforeend', valueTypeElem);
-            // } else {
-            //   customSelectValueElem.textContent = optionElem.value;
-            // }
-            customSelectValueElem.textContent = optionElem.value;
+              customSelectValueElem.textContent = value;
+              customSelectValueElem.insertAdjacentElement('beforeend', valueTypeElem);
+            } else {
+              customSelectValueElem.textContent = optionElem.value;
+            }
+
             select.setAttribute('value', optionElem.value);
             customSelectElem.classList.remove('form__select--is-active');
           }
