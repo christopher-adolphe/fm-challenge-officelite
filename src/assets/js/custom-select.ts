@@ -1,13 +1,13 @@
 export default function customSelect() {
   const selectElems: NodeListOf<HTMLSelectElement> = document.querySelectorAll('.js-select');
 
-  const createCustomSelectElem = (options: string[], index: number, optionTypes: string[]): HTMLDivElement => {
+  const createCustomSelectElem = (options: string[], selectedOption: string, index: number, optionTypes: string[]): HTMLDivElement => {
     const customSelectElem: HTMLDivElement = document.createElement('div');
     const customSelectValueElem: HTMLSpanElement = document.createElement('span');
     const customSelectListElem: HTMLUListElement = document.createElement('ul');
 
     if (options.length) {
-      options.map((option: string, optionIdx: number) => {
+      options.forEach((option: string, optionIdx: number) => {
         const attrValue = option.split(' ').join('-').toLowerCase();
         const listElem: HTMLLIElement = document.createElement('li');
         const labelElem: HTMLLabelElement = document.createElement('label');
@@ -30,10 +30,25 @@ export default function customSelect() {
           optionTypeElem.className = 'form__select-type';
           optionTypeElem.textContent = optionTypes[optionIdx];
 
-          labelElem.insertAdjacentElement('beforeend', optionTypeElem)
+          labelElem.insertAdjacentElement('beforeend', optionTypeElem);
           optionElem.setAttribute('value', `${option} ${optionTypes[optionIdx]}`);
         } else {
           optionElem.setAttribute('value', option);
+        }
+
+        if (option === selectedOption && optionTypes.length) {
+          const selectedOptionTypeElem: HTMLSpanElement = document.createElement('span');
+
+          selectedOptionTypeElem.className = 'form__select-type';
+          selectedOptionTypeElem.textContent = optionTypes[optionIdx];
+          optionElem.setAttribute('checked', 'checked');
+          customSelectValueElem.textContent = selectedOption;
+          customSelectValueElem.insertAdjacentElement('beforeend', selectedOptionTypeElem);
+        }
+        
+        if (option === selectedOption && !optionTypes.length) {
+          optionElem.setAttribute('checked', 'checked');
+          customSelectValueElem.textContent = selectedOption;
         }
 
         listElem.append(labelElem, optionElem);
@@ -55,6 +70,7 @@ export default function customSelect() {
   selectElems.forEach((select: HTMLSelectElement, index: number) => {
     const optionElems: NodeListOf<HTMLOptionElement> = select.querySelectorAll('option');
     const options: string[] = [];
+    let selectedOption = '';
     let types: string[] = [];
 
     if (select.dataset.optionTypes) {
@@ -66,12 +82,16 @@ export default function customSelect() {
     optionElems.forEach((option: HTMLOptionElement) => {
       const value: string | null = option.getAttribute('value');
 
+      if (value && option.selected) {
+        selectedOption = value;
+      }
+
       if (value) {
         options.push(value);
       }
     });
 
-    const customSelect = createCustomSelectElem(options, index, types);
+    const customSelect = createCustomSelectElem(options, selectedOption, index, types);
     let selectListElem: HTMLElement;
 
     select.insertAdjacentElement('afterend', customSelect);
@@ -107,20 +127,20 @@ export default function customSelect() {
           const optionElem = event.target as HTMLInputElement;
 
           if (optionElem.type === 'radio') {
-            // if (types.length) {
-            //   const valueTypeElem: HTMLSpanElement = document.createElement('span');
-            //   const type = optionElem.value.split(' ').pop();
-            //   const value = optionElem.value.split(' ').filter(t => t !== type);
+            if (types.length) {
+              const valueTypeElem: HTMLSpanElement = document.createElement('span');
+              const value = optionElem.value.split(' ').slice(0, 2).join(' ');
+              const type = optionElem.value.split(' ').pop();
 
-            //   valueTypeElem.className = 'form__select-type';
-            //   valueTypeElem.textContent = type || '';
+              valueTypeElem.className = 'form__select-type';
+              valueTypeElem.textContent = type || '';
 
-            //   customSelectValueElem.textContent = value.join(' ');
-            //   customSelectValueElem.insertAdjacentElement('beforeend', valueTypeElem);
-            // } else {
-            //   customSelectValueElem.textContent = optionElem.value;
-            // }
-            customSelectValueElem.textContent = optionElem.value;
+              customSelectValueElem.textContent = value;
+              customSelectValueElem.insertAdjacentElement('beforeend', valueTypeElem);
+            } else {
+              customSelectValueElem.textContent = optionElem.value;
+            }
+
             select.setAttribute('value', optionElem.value);
             customSelectElem.classList.remove('form__select--is-active');
           }

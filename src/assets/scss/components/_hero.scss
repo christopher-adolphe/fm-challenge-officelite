@@ -38,6 +38,36 @@
     }
   }
 
+  &__card {
+    position: relative;
+    width: 100%;
+    height: toRem(496px);
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+    &-front,
+    &-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    &-back {
+      transform: rotateY(180deg);
+    }
+
+    &--flip {
+      transform: rotateY(180deg);
+
+      .hero__card-front {
+        pointer-events: none;
+      }
+    }
+  }
+
   @include media-breakpoint(md) {
     flex-direction: row;
     justify-content: space-between;
