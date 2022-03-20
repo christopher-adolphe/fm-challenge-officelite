@@ -11,50 +11,33 @@ export default function signupForm(formElem: HTMLElement | null) {
   let defaultOptionElem: HTMLInputElement;
   const params: URLSearchParams = new URLSearchParams(window.location.search);
 
-  inputElems.forEach(inputElem => {    
-    if (inputElem.type === 'text') {
-      formData[inputElem.id] = {
-        elem: getDOMElement(inputElem.id),
-        value: inputElem.value,
-        isValid: false
-      };
-    } else if (inputElem.type === 'radio' && inputElem.checked) {
-      defaultOptionElem = inputElem;
-
-      formData[inputElem.id] = {
-        elem: getDOMElement(inputElem.id),
-        value: inputElem.value,
-        isValid: true,
-        isChecked: inputElem.checked
-      };
-    } else {
-      formData[inputElem.id] = {
-        elem: getDOMElement(inputElem.id),
-        value: inputElem.value,
-        isValid: true,
-        isChecked: inputElem.checked
-      };
-    }
-  });
-
-  console.log('selectValueElem: ', selectValueElem);
-  const { elem: selectedQueryOption, value } = formData[`${params.get('pack')}-pack`];
-  formData[`${params.get('pack')}-pack`].isChecked = true;
-  const option = value.split(' ').slice(0, 2).join(' ');
-  const type = value.split(' ').pop();
+  const buildFormData = () => {
+    inputElems.forEach(inputElem => {    
+      if (inputElem.type === 'text') {
+        formData[inputElem.id] = {
+          elem: getDOMElement(inputElem.id),
+          value: inputElem.value,
+          isValid: false
+        };
+      } else if (inputElem.type === 'radio' && inputElem.checked) {
+        defaultOptionElem = inputElem;
   
-  selectedQueryOption?.click();
-  
-  console.log('formData: ', formData);
-  if (selectValueElem) {
-    selectValueElem.innerHTML = `${option} <span class="form__select-type">${type}</span>`
-  }
-
-  Object.keys(formData).forEach(key => {
-    if (key !== `${params.get('pack')}-pack` && formData[key].isChecked && formData[key].isChecked === true) {
-      formData[key].isChecked = false;
-    }
-  });
+        formData[inputElem.id] = {
+          elem: getDOMElement(inputElem.id),
+          value: inputElem.value,
+          isValid: true,
+          isChecked: inputElem.checked
+        };
+      } else {
+        formData[inputElem.id] = {
+          elem: getDOMElement(inputElem.id),
+          value: inputElem.value,
+          isValid: true,
+          isChecked: inputElem.checked
+        };
+      }
+    });
+  };
 
   const onBlurHandler = (event: Event) => {
     const { id, value } = event.target as HTMLInputElement;
@@ -121,6 +104,10 @@ export default function signupForm(formElem: HTMLElement | null) {
         (formElem as HTMLFormElement).reset();
         defaultOptionElem.click();
 
+        if (selectValueElem) {
+          selectValueElem.innerHTML = 'Basic Pack <span class="form__select-type">Free</span>';
+        }
+
         Object.keys(formData).forEach(key => {
           if ((formData[key].elem as HTMLInputElement).type === 'text') {
             formData[key].value = '';
@@ -152,9 +139,39 @@ export default function signupForm(formElem: HTMLElement | null) {
 
   };
 
+  const setSelectedOption = () => {
+    const packId = `${params.get('pack')}-pack`;
+
+    if (!Object.keys(formData).includes(packId)) {
+      return;
+    }
+    
+    const { elem: selectedQueryOption, value } = formData[packId];
+    
+    formData[packId].isChecked = true;
+    const option = value.split(' ').slice(0, 2).join(' ');
+    const type = value.split(' ').pop();
+    
+    selectedQueryOption?.click();
+    
+    if (selectValueElem) {
+      selectValueElem.innerHTML = `${option} <span class="form__select-type">${type}</span>`;
+    }
+  
+    Object.keys(formData).forEach(key => {
+      if (key !== packId && formData[key].isChecked && formData[key].isChecked === true) {
+        formData[key].isChecked = false;
+      }
+    });
+  };
+
+  buildFormData();
+
   formElem.addEventListener('submit', onSubmitHandler);
 
   Object.keys(formData).forEach(key => {
     formData[key].elem?.addEventListener('blur', onBlurHandler);
   });
+
+  setSelectedOption();
 }

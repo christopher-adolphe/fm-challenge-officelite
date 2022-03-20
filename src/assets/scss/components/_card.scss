@@ -135,7 +135,6 @@
 
   @include media-breakpoint(xl) {
     flex-direction: column;
-    justify-content: center;
 
     &__header,
     &__body,
