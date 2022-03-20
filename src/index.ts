@@ -7,10 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const signupFormElem = getDOMElement('js-signup');
   
   generateCopyright(copyrightElem);
-
-  customSelect();
-
   countdown(countdownElem);
-
+  customSelect();
   signupForm(signupFormElem);
 });

@@ -7,7 +7,9 @@ export default function signupForm(formElem: HTMLElement | null) {
 
   const formData: { [key: string]: { elem: HTMLElement | null, value: string, isValid: boolean, isChecked?: boolean } } = {};
   const inputElems: NodeListOf<HTMLInputElement> = formElem.querySelectorAll('input');
+  const selectValueElem = formElem.querySelector('.form__select-value');
   let defaultOptionElem: HTMLInputElement;
+  const params: URLSearchParams = new URLSearchParams(window.location.search);
 
   inputElems.forEach(inputElem => {    
     if (inputElem.type === 'text') {
@@ -32,6 +34,25 @@ export default function signupForm(formElem: HTMLElement | null) {
         isValid: true,
         isChecked: inputElem.checked
       };
+    }
+  });
+
+  console.log('selectValueElem: ', selectValueElem);
+  const { elem: selectedQueryOption, value } = formData[`${params.get('pack')}-pack`];
+  formData[`${params.get('pack')}-pack`].isChecked = true;
+  const option = value.split(' ').slice(0, 2).join(' ');
+  const type = value.split(' ').pop();
+  
+  selectedQueryOption?.click();
+  
+  console.log('formData: ', formData);
+  if (selectValueElem) {
+    selectValueElem.innerHTML = `${option} <span class="form__select-type">${type}</span>`
+  }
+
+  Object.keys(formData).forEach(key => {
+    if (key !== `${params.get('pack')}-pack` && formData[key].isChecked && formData[key].isChecked === true) {
+      formData[key].isChecked = false;
     }
   });
 
