@@ -1,11 +1,9 @@
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { getDOMElement } from './utilities';
 
 export default function animate() {
   const homePageElem = getDOMElement('page-home');
   const signUpPageElem = getDOMElement('page-signup');
-  gsap.registerPlugin(ScrollTrigger);
 
   if (homePageElem) {
     const homeTimeline = gsap.timeline({
