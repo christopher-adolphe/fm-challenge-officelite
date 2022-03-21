@@ -11,11 +11,17 @@
     height: 100%;
   }
 
+  &__illustration,
+  &__form {
+    opacity: 1;
+  }
+
   &__illustration {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding-bottom: toRem(64px);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
     img {
       width: toRem(200px);
@@ -26,8 +32,19 @@
     text-align: center;
   }
 
+  &__form {
+    clip-path: polygon(-40% 0, 100% 0, 100% 140%, -40% 140%);
+  }
+
+  &__title,
+  &__tag-line,
+  &__countdown {
+    clip-path: polygon(0 0, 100% 0, 100% 105%, 0 105%);
+    opacity: 1;
+  }
+
   &__title {
-    margin-bottom: toRem(24px);
+    margin-bottom: toRem(24px);  
   }
 
   &__tag-line {
@@ -36,6 +53,11 @@
     &:last-of-type {
       margin-bottom: toRem(24px);
     }
+  }
+
+  &__cta {
+    clip-path: polygon(-30% 0, 130% 0, 100% 180%, -30% 180%);
+    opacity: 1;
   }
 
   &__card {
