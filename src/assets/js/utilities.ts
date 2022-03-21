@@ -7,13 +7,17 @@ export const getDOMElement = (id: string): HTMLElement | null => {
 
 export const generateCopyright = (elem: HTMLElement | null) => {
   const year = new Date().getFullYear();
-  const copyrightText = `© ${year}. Created by Christopher Adolphe`;
+  const copyrightContent = `
+    <p class="footer__text">© ${year}</p>
+    <img src="assets/images/shared/officelite-logo-only.svg" alt="Officelite Challenge" class="footer__brand" />
+    <p class="footer__text">Coded by <a href="https://github.com/christopher-adolphe/fm-challenge-officelite" aria-label="Christopher's github repository for the Officelite challenge on Frontend Mentor" target="_blank">Christopher Adolphe</a></p>
+  `;
 
   if (!elem) {
     return;
   }
 
-  elem.textContent = copyrightText;
+  elem.innerHTML = copyrightContent;
 };
 
 export const isNotEmpty = (value: string): boolean => {

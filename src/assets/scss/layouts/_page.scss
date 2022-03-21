@@ -23,11 +23,11 @@
     background-color: $blue-color-1;
     color: $neutral-color-2;
     z-index: $zindex-sticky;
-    transform: translateY(calc(-100% - 8px));
-    transition: transform 0.75s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.75s ease-in-out;
 
     &:focus {
-      transform: translateY(0);
+      opacity: 1;
     }
   }
 
@@ -56,11 +56,6 @@
   &__footer {
     padding: toRem(20px) 0;
     background-color: $dark-color-1;
-
-    p {
-      color: $neutral-color-1;
-      font-size: toRem(14px);
-    }
   }
 
   &--home,
