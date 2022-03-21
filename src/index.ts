@@ -1,5 +1,5 @@
 import { getDOMElement, generateCopyright } from './assets/js/utilities';
-import { customSelect, countdown, signupForm } from './assets/js/index';
+import { customSelect, countdown, signupForm, animate } from './assets/js/index';
 
 document.addEventListener('DOMContentLoaded', () => {
   const copyrightElem = getDOMElement('copyright');
@@ -10,4 +10,5 @@ document.addEventListener('DOMContentLoaded', () => {
   countdown(countdownElem);
   customSelect();
   signupForm(signupFormElem);
+  animate();
 });

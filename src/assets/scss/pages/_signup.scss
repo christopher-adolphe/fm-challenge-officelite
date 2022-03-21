@@ -90,6 +90,7 @@
   @include media-breakpoint(xl) {
     .page {
       &__content {
+        min-height: toRem(768px);
         margin-top: toRem(-212px);
 
         &::after {
