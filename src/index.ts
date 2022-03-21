@@ -1,6 +1,5 @@
 import { getDOMElement, generateCopyright } from './assets/js/utilities';
 import { customSelect, countdown, signupForm, animate } from './assets/js/index';
-import gsap from 'gsap';
 
 document.addEventListener('DOMContentLoaded', () => {
   const copyrightElem = getDOMElement('copyright');
