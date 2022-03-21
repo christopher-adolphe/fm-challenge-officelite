@@ -44,7 +44,16 @@
     }
 
     .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
       padding: toRem(24px);
+
+      &__header {
+        align-items: center;
+        width: 100%;
+      }
     }
   }
 

@@ -50,11 +50,5 @@
   &--shadow {
     box-shadow: $shadow-color-2;
     transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
-    
-    // &:hover,
-    // &:focus,
-    // &.active {
-    //   box-shadow: $shadow-color-2;
-    // }
   }
 }

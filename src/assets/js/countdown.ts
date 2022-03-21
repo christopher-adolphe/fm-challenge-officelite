@@ -32,6 +32,7 @@ export default function countdown(elem: HTMLElement | null) {
   const formattedLaunchDate = launchDate.toString().split(' ').slice(1, 4);
 
   launchDateElem.innerHTML = `Coming <span class="text-blue-color-1">${formattedLaunchDate[1]} ${formattedLaunchDate[0]} ${formattedLaunchDate[2]}</span>`;
+  launchDateElem.setAttribute('aria-label', `Officelite launching on ${formattedLaunchDate[1]} ${formattedLaunchDate[0]} ${formattedLaunchDate[2]}`);
 
   const calculateTimeDiff = () => {
     const currentDate = new Date();

@@ -107,44 +107,46 @@ export default function customSelect() {
 
         selectListElem = customSelectElem.querySelector('.form__select-list') as HTMLElement;
 
-        if (options.length >= 8) {
-          const maxHeight = (60 * options.length) * 0.5;
-    
-          selectListElem.style.maxHeight = `${maxHeight}px`;
-        }
-
-        // eslint-disable-next-line no-unsafe-optional-chaining
-        const { height } = selectListElem?.getBoundingClientRect();
-
-        if (availableSpace < height) {
-          selectListElem.classList.add('form__select-list--dropup');
-        }
-
-        customSelectElem.classList.toggle('form__select--is-active');
-
-        selectListElem?.addEventListener('click', (event: Event) => {
-          event.stopPropagation();
-          const optionElem = event.target as HTMLInputElement;
-
-          if (optionElem.type === 'radio') {
-            if (types.length) {
-              const valueTypeElem: HTMLSpanElement = document.createElement('span');
-              const value = optionElem.value.split(' ').slice(0, 2).join(' ');
-              const type = optionElem.value.split(' ').pop();
-
-              valueTypeElem.className = 'form__select-type';
-              valueTypeElem.textContent = type || '';
-
-              customSelectValueElem.textContent = value;
-              customSelectValueElem.insertAdjacentElement('beforeend', valueTypeElem);
-            } else {
-              customSelectValueElem.textContent = optionElem.value;
-            }
-
-            select.setAttribute('value', optionElem.value);
-            customSelectElem.classList.remove('form__select--is-active');
+        if (selectListElem) {
+          if (options.length >= 8) {
+            const maxHeight = (60 * options.length) * 0.5;
+      
+            selectListElem.style.maxHeight = `${maxHeight}px`;
           }
-        });
+  
+          // eslint-disable-next-line no-unsafe-optional-chaining
+          const { height } = selectListElem.getBoundingClientRect();
+  
+          if (availableSpace < height) {
+            selectListElem.classList.add('form__select-list--dropup');
+          }
+  
+          customSelectElem.classList.toggle('form__select--is-active');
+  
+          selectListElem.addEventListener('click', (event: Event) => {
+            event.stopPropagation();
+            const optionElem = event.target as HTMLInputElement;
+  
+            if (optionElem.type === 'radio') {
+              if (types.length) {
+                const valueTypeElem: HTMLSpanElement = document.createElement('span');
+                const value = optionElem.value.split(' ').slice(0, 2).join(' ');
+                const type = optionElem.value.split(' ').pop();
+  
+                valueTypeElem.className = 'form__select-type';
+                valueTypeElem.textContent = type || '';
+  
+                customSelectValueElem.textContent = value;
+                customSelectValueElem.insertAdjacentElement('beforeend', valueTypeElem);
+              } else {
+                customSelectValueElem.textContent = optionElem.value;
+              }
+  
+              select.setAttribute('value', optionElem.value);
+              customSelectElem.classList.remove('form__select--is-active');
+            }
+          });
+        }
       }
     });
 

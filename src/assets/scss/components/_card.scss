@@ -51,6 +51,7 @@
   &__sub-title {
     font-size: toRem(56px);
     line-height: 1.1;
+    text-transform: none;
   }
 
   &__list {
@@ -134,7 +135,6 @@
 
   @include media-breakpoint(xl) {
     flex-direction: column;
-    justify-content: center;
 
     &__header,
     &__body,
