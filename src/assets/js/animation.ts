@@ -1,4 +1,5 @@
-import { gsap, ScrollTrigger } from 'gsap/all';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { getDOMElement } from './utilities';
 
 export default function animate() {
