@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const countdownElem = getDOMElement('js-countdown');
   const signupFormElem = getDOMElement('js-signup');
   
+  animate();
   generateCopyright(copyrightElem);
   countdown(countdownElem);
   customSelect();
   signupForm(signupFormElem);
-  animate();
 });
