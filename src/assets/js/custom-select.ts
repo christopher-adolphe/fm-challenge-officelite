@@ -114,7 +114,6 @@ export default function customSelect() {
             selectListElem.style.maxHeight = `${maxHeight}px`;
           }
   
-          // eslint-disable-next-line no-unsafe-optional-chaining
           const { height } = selectListElem.getBoundingClientRect();
   
           if (availableSpace < height) {

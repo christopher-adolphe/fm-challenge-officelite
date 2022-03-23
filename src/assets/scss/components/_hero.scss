@@ -13,7 +13,8 @@
 
   &__illustration,
   &__form {
-    opacity: 1;
+    transform: translateX(-10%);
+    opacity: 0;
   }
 
   &__illustration {
@@ -21,7 +22,7 @@
     justify-content: center;
     align-items: flex-start;
     padding-bottom: toRem(64px);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 
     img {
       width: toRem(200px);
@@ -33,14 +34,15 @@
   }
 
   &__form {
-    clip-path: polygon(-40% 0, 100% 0, 100% 140%, -40% 140%);
+    clip-path: polygon(-40% 0, 0 0, 0 140%, -40% 140%);
   }
 
   &__title,
   &__tag-line,
   &__countdown {
-    clip-path: polygon(0 0, 100% 0, 100% 105%, 0 105%);
-    opacity: 1;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transform: translateY(100%);
+    opacity: 0;
   }
 
   &__title {
@@ -56,8 +58,9 @@
   }
 
   &__cta {
-    clip-path: polygon(-30% 0, 130% 0, 100% 180%, -30% 180%);
-    opacity: 1;
+    clip-path: polygon(-30% 100%, 130% 100%, 100% 100%, 0 100%);
+    transform: translateY(100%);
+    opacity: 0;
   }
 
   &__card {
