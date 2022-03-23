@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Preview for the Officelite](./screencast-officelite-home-desktop.gif)
+![Preview for the Officelite](./screenshot.png)
 
 ### Links
 
