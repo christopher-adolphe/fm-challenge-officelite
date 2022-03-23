@@ -29,26 +29,26 @@ export default function animate() {
       }
     });
 
-    heroTimeline.from('.hero__title', {
-      clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
-      y: '100%',
-      opacity: 0,
+    heroTimeline.to('.hero__title', {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 105%, 0% 105%)',
+      y: '0%',
+      opacity: 1,
       duration: 2.2
     })
-    .from('.hero__tag-line', {
-      clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
-      y: '100%',
-      opacity: 0
+    .to('.hero__tag-line', {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 105%, 0% 105%)',
+      y: '0%',
+      opacity: 1
     }, '-=2')
-    .from('.hero__cta', {
-      clipPath: 'polygon(-30% 100%, 130% 100%, 100% 100%, 0% 100%)',
-      y: '100%',
-      opacity: 0
+    .to('.hero__cta', {
+      clipPath: 'polygon(-30% 0%, 130% 0%, 100% 180%, -30% 180%)',
+      y: '0%',
+      opacity: 1
     }, '-=2')
-    .from('.hero__illustration', {
-      clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
-      x: '-10%',
-      opacity: 0
+    .to('.hero__illustration', {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+      x: '0%',
+      opacity: 1
     }, '-=2');
 
     pricingTimeline.from('.card', {
@@ -70,32 +70,32 @@ export default function animate() {
     });
     const bgPanel = CSSRulePlugin.getRule('.page--signup .page__content::after');
 
-    signupTimeline.from(bgPanel, {
+    signupTimeline.to(bgPanel, {
       cssRule: {
-        clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
-        opacity: 0
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        opacity: 1
       }
     })
-    .from('.hero__title', {
-      clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
-      y: '100%',
-      opacity: 0,
+    .to('.hero__title', {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 105%, 0% 105%)',
+      y: '0%',
+      opacity: 1,
       duration: 2.2
     }, '-=2')
-    .from('.hero__tag-line', {
-      clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
-      y: '100%',
-      opacity: 0
+    .to('.hero__tag-line', {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 105%, 0% 105%)',
+      y: '0%',
+      opacity: 1
     }, '-=2')
-    .from('.hero__countdown', {
-      clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
-      y: '100%',
-      opacity: 0
+    .to('.hero__countdown', {
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 105%, 0% 105%)',
+      y: '0%',
+      opacity: 1
     }, '-=2')
-    .from('.hero__form', {
-      clipPath: 'polygon(-40% 0%, 0% 0%, 0% 140%, -40% 140%)',
-      x: '-10%',
-      opacity: 0
+    .to('.hero__form', {
+      clipPath: 'polygon(-40% 0%, 100% 0%, 100% 140%, -40% 140%)',
+      x: '0%',
+      opacity: 1
     }, '-=2');
 
     return;
