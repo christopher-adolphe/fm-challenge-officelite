@@ -30,7 +30,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Preview for the Officelite](./screenshot.png)
+#### Home page
+![Preview for the Officelite home page](./screenshot-home.png)
+
+#### Sign up page
+![Preview for the Officelite sign up page](./screenshot-sign-up.png)
 
 ### Links
 
