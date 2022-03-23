@@ -23,11 +23,12 @@
     background-color: $blue-color-1;
     color: $neutral-color-2;
     z-index: $zindex-sticky;
-    opacity: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     transition: opacity 0.75s ease-in-out;
 
     &:focus {
       opacity: 1;
+      clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
     }
   }
 
