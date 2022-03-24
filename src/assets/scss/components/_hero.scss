@@ -11,18 +11,18 @@
     height: 100%;
   }
 
-  // &__illustration,
-  // &__form {
-  //   transform: translateX(-10%);
-  //   opacity: 0;
-  // }
+  &__illustration,
+  &__form {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
 
   &__illustration {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding-bottom: toRem(64px);
-    // clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 
     img {
       width: toRem(200px);
@@ -33,17 +33,17 @@
     text-align: center;
   }
 
-  // &__form {
-  //   clip-path: polygon(-40% 0, 0 0, 0 140%, -40% 140%);
-  // }
+  &__form {
+    clip-path: polygon(-40% 0, 0 0, 0 140%, -40% 140%);
+  }
 
-  // &__title,
-  // &__tag-line,
-  // &__countdown {
-  //   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-  //   transform: translateY(100%);
-  //   opacity: 0;
-  // }
+  &__title,
+  &__tag-line,
+  &__countdown {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transform: translateY(100%);
+    opacity: 0;
+  }
 
   &__title {
     margin-bottom: toRem(24px);  
@@ -57,11 +57,11 @@
     }
   }
 
-  // &__cta {
-  //   clip-path: polygon(-30% 100%, 130% 100%, 100% 100%, 0 100%);
-  //   transform: translateY(100%);
-  //   opacity: 0;
-  // }
+  &__cta {
+    clip-path: polygon(-30% 100%, 130% 100%, 100% 100%, 0 100%);
+    transform: translateY(100%);
+    opacity: 0;
+  }
 
   &__card {
     position: relative;

@@ -22,8 +22,8 @@
         background-position: center toRem(-404px);
         background-repeat: no-repeat;
         background-size: toRem(1202px) toRem(1202px);
-        // clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-        // opacity: 0;
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        opacity: 0;
         z-index: -1;
       }
     }
