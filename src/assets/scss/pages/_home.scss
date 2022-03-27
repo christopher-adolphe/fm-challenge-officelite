@@ -48,7 +48,7 @@
   }
 
   @include media-breakpoint(xl) {
-    background-position: 904% toRem(-430px);
+    background-position: 904% toRem(-420px);
     background-size: toRem(1134px) toRem(1134px);
 
     .page {
@@ -60,9 +60,9 @@
         }
   
         &--countdown {
-          padding-top: toRem(336px);
+          padding-top: toRem(345px);
           padding-bottom: toRem(90px);
-          background-position: 92% toRem(-615px);
+          background-position: 92% toRem(-605px);
           background-size: toRem(2036px) toRem(2036px);
         }
       }
@@ -70,36 +70,36 @@
   }
 
   @include media-breakpoint(xxl) {
-    background-position: 236% toRem(-430px);
+    background-position: 214% toRem(-420px);
 
     .page {
       &__section {
         &--countdown {
-          background-position: 114% toRem(-615px);
+          background-position: 118% toRem(-605px);
         }
       }
     }
   }
 
   @include media-breakpoint(1680px) {
-    background-position: 139% toRem(-430px);
+    background-position: 142% toRem(-420px);
 
     .page {
       &__section {
         &--countdown {
-          background-position: 156% toRem(-615px);
+          background-position: 163.25% toRem(-605px);
         }
       }
     }
   }
 
   @include media-breakpoint(1920px) {
-    background-position: 111.5% toRem(-430px);
+    background-position: 114% toRem(-420px);
 
     .page {
       &__section {
         &--countdown {
-          background-position: 360% toRem(-615px);
+          background-position: 398% toRem(-605px);
         }
       }
     }
