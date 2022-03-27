@@ -96,7 +96,7 @@
   @include media-breakpoint(md) {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     &__illustration {
       flex: 1;
@@ -118,6 +118,11 @@
     &__title,
     &__tag-line {
       text-align: left;
+    }
+
+    &__title {
+      margin-top: toRem(73px);
+      margin-bottom: toRem(20px);
     }
   }
 

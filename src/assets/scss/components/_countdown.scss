@@ -95,7 +95,7 @@
     &__counter {
       width: toRem(100px);
       height: toRem(128px);
-      padding: toRem(16px);
+      padding: toRem(28px) toRem(16px) toRem(16px) toRem(16px);
       border-radius: toRem(13px);
 
       &:not(:last-child) {
@@ -134,6 +134,7 @@
 
     &__cta {
       justify-content: flex-end;
+      margin-top: toRem(12px);
     }
   }
 }
