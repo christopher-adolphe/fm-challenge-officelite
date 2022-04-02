@@ -1,10 +1,9 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import CSSRulePlugin from 'gsap/CSSRulePlugin';
 import { getDOMElement } from './utilities';
 
 export default function animate() {
-  gsap.registerPlugin(ScrollTrigger, CSSRulePlugin);
+  gsap.registerPlugin(ScrollTrigger);
   const homePageElem = getDOMElement('page-home');
   const signUpPageElem = getDOMElement('page-signup');
 
@@ -68,20 +67,13 @@ export default function animate() {
         duration: 2
       }
     });
-    const bgPanel = CSSRulePlugin.getRule('.page--signup .page__content::after');
 
-    signupTimeline.to(bgPanel, {
-      cssRule: {
-        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-        opacity: 1
-      }
-    })
-    .to('.hero__title', {
+    signupTimeline.to('.hero__title', {
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 105%, 0% 105%)',
       y: '0%',
       opacity: 1,
       duration: 2.2
-    }, '-=2')
+    })
     .to('.hero__tag-line', {
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 105%, 0% 105%)',
       y: '0%',
